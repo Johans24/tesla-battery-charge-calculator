@@ -12,14 +12,8 @@
     >
       <div class="tesla-container" style="width: 60rem; position: relative;">
         <img src="./images/car-base.png" width="100%" alt="Tesla 100D Model" />
-        <div style="position: absolute;bottom: 52px; right:264px;width: 73px;">
-          <img class="wheel-icon" width="100%" src="./images/icon-wheel.svg" alt="">
-        </div>
         <div style="position: absolute;bottom: 41px;left: 243px;width: 85px;">
           <img src="./images/car-wheel.png" width="100%" alt="left wheel">
-        </div>
-        <div style="position: absolute;bottom: 52px; right:264px;width: 73px;">
-          <img class="wheel-icon" width="100%" src="./images/icon-wheel.svg" alt="">
         </div>
         <div style="position: absolute;bottom: 41px;right: 256px;width: 85px;">
           <img src="./images/car-wheel.png" width="100%" alt="right wheel">
@@ -33,18 +27,18 @@
       <label for="temp">Outside Temperature</label>
       <input type="number" step="10" min="-10" max="40" name="temp" id="temp" />
       <label for="ac">AC: </label>
-      <input type="checkbox" name="ac" id="ac" />
+      <input type="checkbox" name="ac" id="ac" true-value="on" false-value="off" />
       <fieldset>
         <legend>Wheels</legend>
 
         <div>
-          <input type="radio" id="wheel-21" name="wheelsize" value="21" />
-          <label for="wheel-21">21"</label>
+          <input type="radio" id="wheel-19" name="wheelsize" value="19" />
+          <label for="wheel-19">19"</label>
         </div>
 
         <div>
-          <input type="radio" id="wheel-19" name="wheelsize" value="19" />
-          <label for="wheel-19">19"</label>
+          <input type="radio" id="wheel-21" name="wheelsize" value="21" />
+          <label for="wheel-21">21"</label>
         </div>
       </fieldset>
     </section>
