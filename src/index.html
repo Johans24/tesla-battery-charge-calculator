@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="index.css">
+    <title>Tesla</title>
+  </head>
+  <body>
+    <section
+      style="display: flex; flex-direction: row; justify-content: center"
+    >
+      <div class="tesla-container" style="width: 60rem; position: relative;">
+        <img src="./images/car-base.png" width="100%" alt="Tesla 100D Model" />
+        <div style="position: absolute;bottom: 52px; right:264px;width: 73px;">
+          <img class="wheel-icon" width="100%" src="./images/icon-wheel.svg" alt="">
+        </div>
+        <div style="position: absolute;bottom: 41px;left: 243px;width: 85px;">
+          <img class="wheel-icon" src="./images/car-wheel.png" width="100%" alt="left wheel">
+        </div>
+        <div style="position: absolute;bottom: 52px; right:264px;width: 73px;">
+          <img class="wheel-icon" width="100%" src="./images/icon-wheel.svg" alt="">
+        </div>
+        <div style="position: absolute;bottom: 41px;right: 256px;width: 85px;">
+          <img class="wheel-icon" src="./images/car-wheel.png" width="100%" alt="right wheel">
+        </div>
+      </div>
+    </section>
+
+    <section id="battery-range-calculator">
+      <label for="kmh">Speed</label>
+      <input type="number" step="10" min="70" max="140" name="kmh" id="kmh" />
+      <label for="temp">Outside Temperature</label>
+      <input type="number" step="10" min="-10" max="40" name="temp" id="temp" />
+      <label for="ac">AC: </label>
+      <input type="checkbox" name="ac" id="ac" />
+      <fieldset>
+        <legend>Wheels</legend>
+
+        <div>
+          <input type="radio" id="wheel-21" name="wheelsize" value="21" />
+          <label for="wheel-21">21"</label>
+        </div>
+
+        <div>
+          <input type="radio" id="wheel-19" name="wheelsize" value="19" />
+          <label for="wheel-19">19"</label>
+        </div>
+      </fieldset>
+    </section>
+
+    100D:
+    <span id="100D-km"> </span>
+    P100D:
+    <span id="P100D-km"> </span>
+    <button id="print">
+      print
+    </button>
+  </body>
+  <script src="./index.js"></script>
+</html>
