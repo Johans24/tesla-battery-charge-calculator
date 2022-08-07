@@ -754,14 +754,14 @@ const metricsP100D = [
 const normalizeData = data => {
   return data.reduce((normalizedData, curr) => {
     const { wheelsize, temp, ac, hwy } = curr;
-    normalizeData.byWheelsize = {
-      ...normalizeData.byWheelsize,
+    normalizedData.byWheelsize = {
+      ...normalizedData.byWheelsize,
       [wheelsize]: {
         ["byAc"]: {
-          ...(normalizeData.byWheelsize?.[wheelsize]?.byAc ?? {}),
+          ...(normalizedData.byWheelsize?.[wheelsize]?.byAc ?? {}),
           [ac]: {
             ["byTemp"]: {
-              ...(normalizeData.byWheelsize?.[wheelsize]?.byAc[ac]?.byTemp ?? {}),
+              ...(normalizedData.byWheelsize?.[wheelsize]?.byAc[ac]?.byTemp ?? {}),
               [temp]: hwy,
             },
           },
