@@ -1,18 +1,119 @@
-.wheel-icon {
-  -webkit-animation:spin .7s linear infinite;
-  -moz-animation:spin .7s linear infinite;
-  animation:spin .7s linear infinite;
+@font-face {
+  font-family: MontserratRegular;
+  src: url(../public/fonts/Montserrat-Regular.ttf);
 }
 
-@-moz-keyframes spin { 
-  100% { -moz-transform: rotate(360deg); } 
+html {
+  font-family: MontserratRegular;
 }
-@-webkit-keyframes spin { 
-  100% { -webkit-transform: rotate(360deg); } 
+
+.tesla-car {
+  width: 100%;
+  min-height: 350px;
+  background: #fff url(../public/images/car-base.png) no-repeat top center;
+  background-size: contain; }
+
+.tesla-car-animation {
+  -webkit-animation: slide-in-elliptic-bottom-fwd 0.7s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+	-moz-animation: slide-in-elliptic-bottom-fwd 0.7s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+	animation: slide-in-elliptic-bottom-fwd 0.7s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+  }  
+
+.tesla-wheels {
+  height: 247px;
+  width: 555px;
+  position: relative;
+  margin: 0 auto; }
+
+
+.tesla-wheel {
+  height: 100px;
+  width: 100px;
+  bottom: 0;
+  position: absolute;
+  background-repeat: no-repeat;
+  background-position: 0 0;
+  background-size: cover; }
+  .tesla-wheel--front {
+    left: 53px; }
+  .tesla-wheel--rear {
+    right: 72px; }
+  .tesla-wheel--19 {
+    background-image: url(../public/images/car-wheel.png);
+    -webkit-animation: infinite-spinning 250ms steps(6) infinite;
+    -moz-animation: infinite-spinning 250ms steps(6) infinite;
+    -o-animation: infinite-spinning 250ms steps(6) infinite;
+    animation: infinite-spinning 250ms steps(6) infinite; }
+  .tesla-wheel--21 {
+    background-image: url(../public/images/car-wheel.png);
+    -webkit-animation: infinite-spinning 480ms steps(12) infinite;
+    -moz-animation: infinite-spinning 480ms steps(12) infinite;
+    -o-animation: infinite-spinning 480ms steps(12) infinite;
+    animation: infinite-spinning 480ms steps(12) infinite; }
+
+@keyframes infinite-spinning {
+  from {
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg); }
+  to {
+    -webkit-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+    transform: rotate(360deg); } }
+@-webkit-keyframes infinite-spinning {
+  from {
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg); }
+  to {
+    -webkit-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+    transform: rotate(360deg); } }
+
+:root {
+  --primary: #1897FE;
+  --grey: #F0F2F7;
+  --dark-grey: #BCC2D3;
+}    
+
+input[type="number"] {
+  -webkit-appearance: textfield;
+  -moz-appearance: textfield;
+  appearance: textfield;
+  border: 1px solid var(--dark-grey);
+  outline: none;
+  padding: 0.875rem;
+  font-size: 34px;
+  background-color: var(--grey);
+
+  &::-webkit-inner-spin-button, &::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+  }
 }
-@keyframes spin { 
-  100% { 
-      -webkit-transform: rotate(360deg); 
-      transform:rotate(360deg); 
-  } 
+
+.tesla-controls {
+  position: relative;
+  display: inline-block;
+  border: 1px solid var(--dark-grey);
+  padding: 0.875rem;
+  font-size: 34px;
+  background-color: var(--grey);
+
+  // &::after {
+  //   position: absolute;
+  //   top: 2px;
+  //   right: 2px;
+  //   content: "KMH"
+  // }
+  // &--kmh::after {
+  //   content: "KMH"
+  // }
 }

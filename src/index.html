@@ -10,7 +10,13 @@
     <section
       style="display: flex; flex-direction: row; justify-content: center"
     >
-      <div class="tesla-container" style="width: 60rem; position: relative;">
+    <div class="tesla-car tesla-car-animation">
+      <div class="tesla-wheels tesla-wheel--animation--19">
+        <div class="tesla-wheel tesla-wheel--front tesla-wheel--19"></div>
+        <div class="tesla-wheel tesla-wheel--rear tesla-wheel--19"></div>
+      </div>
+    </div>
+      <!-- <div class="tesla-container" style="width: 60rem; position: relative;">
         <img src="./images/car-base.png" width="100%" alt="Tesla 100D Model" />
         <div style="position: absolute;bottom: 41px;left: 243px;width: 85px;">
           <img src="./images/car-wheel.png" width="100%" alt="left wheel">
@@ -18,16 +24,40 @@
         <div style="position: absolute;bottom: 41px;right: 256px;width: 85px;">
           <img src="./images/car-wheel.png" width="100%" alt="right wheel">
         </div>
-      </div>
+      </div> -->
     </section>
 
     <section id="battery-range-calculator">
-      <label for="kmh">Speed</label>
-      <input type="number" step="10" min="70" max="140" name="kmh" id="kmh" />
-      <label for="temp">Outside Temperature</label>
-      <input type="number" step="10" min="-10" max="40" name="temp" id="temp" />
+      <div class="tesla-controls">
+        <label for="kmh">Speed</label>
+        <div class="tesla-controls--suffix kmh">
+          <input type="number" step="10" min="70" max="140" name="kmh" id="kmh" />
+          <div class="arrow-controls tesla-controls--arrows">
+            <button name="kmh" control="up" class="tesla-arrows tesla-controls__up">
+              +
+            </button>
+            <button name="kmh" control="down" class="tesla-arrows tesla-controls__down">
+              -
+            </button>
+          </div>
+        </div>
+      </div>
+      <div class="tesla-controls">
+        <label for="temp">Outside Temperature</label>
+        <div class="tesla-controls__suffix degrees">
+          <input type="number" step="10" min="-10" max="40" name="temp" id="temp" />
+          <div class="arrow-controls tesla-controls--arrows">
+            <button name="temp" control="up" class="tesla-arrows tesla-controls__up">
+              +
+            </button>
+            <button name="temp" control="down" class="tesla-arrows tesla-controls__down">
+              -
+            </button>
+          </div>
+        </div>
+      </div>
       <label for="ac">AC: </label>
-      <input type="checkbox" name="ac" id="ac" true-value="on" false-value="off" />
+      <input type="checkbox" name="ac" id="ac" />
       <fieldset>
         <legend>Wheels</legend>
 

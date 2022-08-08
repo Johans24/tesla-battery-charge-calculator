@@ -27,8 +27,10 @@ export const initReactivity = obj => {
       },
   
       set(newValue) {
-        innerValue = newValue;
-        reactive.trigger();
+        if (innerValue !== newValue) {
+          innerValue = newValue;
+          reactive.trigger();
+        }
       },
     });
   });
