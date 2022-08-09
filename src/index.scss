@@ -80,40 +80,155 @@ html {
 
 :root {
   --primary: #1897FE;
+  --primary-dark: #177ed2;
+  --heat: #Fe1818;
+  --heat-dark: #D21717;
   --grey: #F0F2F7;
   --dark-grey: #BCC2D3;
+  --darker-grey: #696868;
+  --medium-grey: #CCC;
+  --white: #fff;
 }    
+
+.grid-container {
+  display: grid;
+  gap: 1rem;
+  grid-auto-rows: minmax(100px, auto);
+  grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr));
+}
 
 input[type="number"] {
   -webkit-appearance: textfield;
   -moz-appearance: textfield;
   appearance: textfield;
-  border: 1px solid var(--dark-grey);
   outline: none;
-  padding: 0.875rem;
-  font-size: 34px;
-  background-color: var(--grey);
+  border: none;
+  cursor: auto;
+  font-size: inherit;
+  background-color: transparent;
 
   &::-webkit-inner-spin-button, &::-webkit-outer-spin-button {
     -webkit-appearance: none;
   }
 }
 
-.tesla-controls {
-  position: relative;
-  display: inline-block;
-  border: 1px solid var(--dark-grey);
-  padding: 0.875rem;
-  font-size: 34px;
-  background-color: var(--grey);
+.tesla-settings {
+  max-width: 12rem;
+  &-container {
+    position: relative;
+    border: 1px solid var(--dark-grey);
+    padding: 0.875rem;
+    font-size: 34px;
+    background-color: var(--grey);
+    &::after {
+      position: absolute;
+      margin: auto 0;
+      font-weight: bold;
+      font-size: 20px;
+    }
 
-  // &::after {
-  //   position: absolute;
-  //   top: 2px;
-  //   right: 2px;
-  //   content: "KMH"
-  // }
-  // &--kmh::after {
-  //   content: "KMH"
-  // }
+    &.kmh::after {
+      content: "KMH";
+      left: 4em;
+      bottom: 1em;
+    }
+
+    &.degrees::after {
+      content: "°";
+      left: 3.2em;
+      bottom: 1.5em;
+    }
+  }
+
+  &--arrows {
+    position: absolute;
+    display: grid;
+    right: 0.2em;
+    top: 0.1em;
+    height: 100%;
+
+    button {
+      outline: 0;
+      width: 30px;
+      color: var(--primary);
+      cursor: pointer;
+      border: 0;
+      background-size: 60%;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-color: transparent;
+
+      &:first-child {
+        background-image: url(../public/images/icon-thin-chevron-up.svg);
+      }
+      &:last-child {
+        border-top: 1px solid var(--medium-grey);
+        background-image: url(../public/images/icon-thin-chevron-down.svg);
+      }
+    }
+  }
+}
+
+input[type="checkbox"] {
+  border: 0;
+  height: 1px;
+  width: 1px;
+  overflow: hidden;
+  position: absolute;
+}
+
+.tesla-fan {
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 6.25em;
+  height: 6.25em;
+  border: 5px solid #f7f7f7;
+  border-radius: 50%;
+  box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.3);
+  color: var(--darker-grey);
+  background: var(--white);
+
+  &--active {
+    color: var(--white);
+    background: var(--primary);
+    background: -moz-linear-gradient(top, var(--primary) 0%, var(--primary-dark) 100%);
+    background: -webkit-linear-gradient(top, var(--primary) 0%, var(--primary-dark) 100%);
+    background: linear-gradient(to bottom, var(--primary) 0%, var(--primary-dark) 100%);
+  }
+  &--active.tesla-heat {
+    background: var(--heat);
+    background: -moz-linear-gradient(top, var(--heat) 0%, var(--heat-dark) 100%);
+    background: -webkit-linear-gradient(top, var(--heat) 0%, var(--heat-dark) 100%);
+    background: linear-gradient(to bottom, var(--heat) 0%, var(--heat-dark) 100%);
+  }
+
+  &__mode {
+    width: 1.375em;
+    height: 1.375em;
+    margin: 5px 0px;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-image: url(../public/images/icon-fan-gray.svg);
+  }
+
+  label {
+    margin: 15px 0 0;
+    text-align: center;
+    font-size: 8px;
+    text-transform: uppercase;
+  }
+}
+
+.tesla-heat .tesla-fan__mode {
+  background-image: url(../public/images/icon-wave-gray.svg);
+}
+.tesla-fan--active .tesla-fan__mode {
+  background-image: url(../public/images/icon-fan-white.svg);
+}
+.tesla-fan--active.tesla-heat .tesla-fan__mode {
+  background-image: url(../public/images/icon-wave-white.svg);
 }
