@@ -13,6 +13,9 @@ module.exports = {
   ],
   devServer: {
     port: 3030,
+    static: {
+      directory: path.join(__dirname, 'public'),
+    },
   },
   module: {
     rules: [

@@ -27,6 +27,21 @@
       </div> -->
     </section>
 
+    <section class="justify-center">
+      <div>
+        <img src="./images/100d.png" width="100%" alt="Tesla 100d Model">
+        <h6 class="tesla-kmh">
+          <span id="100D-km"></span>
+        </h6>
+      </div>
+      <div>
+        <img src="./images/p100d.png" width="100%" alt="Tesla p100d Model">
+        <h6 class="tesla-kmh">
+          <span id="P100D-km"></span>
+        </h6>
+      </div>
+    </section>
+
     <section class="grid-container" id="battery-range-calculator">
       <div class="tesla-settings">
         <label for="kmh">Speed</label>
@@ -72,14 +87,28 @@
       <fieldset>
         <legend>Wheels</legend>
 
-        <div>
+        <div class="tesla-wheel--size">
           <input type="radio" id="wheel-19" name="wheelsize" value="19" />
-          <label for="wheel-19">19"</label>
+          <label for="wheel-19">
+            <div style="display: flex; justify-content: space-between; padding: 2em">
+              <img src="./images/icon-wheel.svg" alt="Tesla wheel 21'">
+              <h6> 
+                19"
+              </h6>
+            </div>
+          </label>
         </div>
 
-        <div>
+        <div class="tesla-wheel--size">
           <input type="radio" id="wheel-21" name="wheelsize" value="21" />
-          <label for="wheel-21">21"</label>
+          <label for="wheel-21">
+            <div style="display: flex; justify-content: space-between; padding: 2em">
+              <img src="./images/icon-wheel.svg" alt="Tesla wheel 21'">
+              <h6> 
+                21"
+              </h6>
+            </div>
+          </label>
         </div>
       </fieldset>
     </section>

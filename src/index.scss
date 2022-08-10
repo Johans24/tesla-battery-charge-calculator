@@ -90,11 +90,32 @@ html {
   --white: #fff;
 }    
 
+.justify-center {
+  display: flex;
+  justify-content: center;
+}
+
+.tesla-kmh {
+  color: var(--primary);
+  font-size: 46px;
+  position: relative;
+  margin: 1em 0;
+
+  &::after {
+    position: absolute;
+    font-size: 20px;
+    top: 7px;
+    right: 2px;
+    content: "KM"
+  }
+}
+
 .grid-container {
   display: grid;
   gap: 1rem;
   grid-auto-rows: minmax(100px, auto);
-  grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr));
+  grid-template-columns: 2fr 2fr 1fr 4fr;
+  // justify-items: center;
 }
 
 input[type="number"] {
@@ -113,7 +134,7 @@ input[type="number"] {
 }
 
 .tesla-settings {
-  max-width: 12rem;
+  min-width: 12rem;
   &-container {
     position: relative;
     border: 1px solid var(--dark-grey);
@@ -231,4 +252,39 @@ input[type="checkbox"] {
 }
 .tesla-fan--active.tesla-heat .tesla-fan__mode {
   background-image: url(../public/images/icon-wave-white.svg);
+}
+
+
+input[type="radio"] {
+  -webkit-appearance: none;
+  appearance: none;
+  background-color: var(--grey);
+  height: 100%;
+  width: 100%;
+  border-radius: 5px;
+  position: absolute;
+  cursor: pointer;
+  outline: none;
+  transition: transform 0.2s;
+}
+
+input[type="radio"]:checked {
+  border: 1px solid var(--primary);
+}
+
+label {
+  margin: 10px;
+  cursor: pointer;
+  z-index: 99999;
+}
+
+.tesla-wheel--size {
+  min-height: 4.375rem;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  word-wrap: break-word;
+  background-clip: border-box;
+  border: 1px solid var(--dark-grey);
 }
