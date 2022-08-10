@@ -1,44 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Tesla</title>
-  </head>
-  <body>
-    <section
-      style="display: flex; flex-direction: row; justify-content: center"
-    >
-      <div class="tesla-car tesla-car-animation">
-        <div class="tesla-wheels tesla-wheel--animation--19">
-          <div class="tesla-wheel tesla-wheel--front tesla-wheel--19"></div>
-          <div class="tesla-wheel tesla-wheel--rear tesla-wheel--19"></div>
-        </div>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tesla</title>
+</head>
+
+<body>
+  <main class="container">
+    <section class="tesla-car">
+      <div class="tesla-car--base">
+        <img class="tesla-car--base__img" width="100%" src="./images/car-base.png" alt="Tesla Car">
       </div>
-      <!-- <div class="tesla-container" style="width: 60rem; position: relative;">
-        <img src="./images/car-base.png" width="100%" alt="Tesla 100D Model" />
-        <div style="position: absolute;bottom: 41px;left: 243px;width: 85px;">
-          <img src="./images/car-wheel.png" width="100%" alt="left wheel">
-        </div>
-        <div style="position: absolute;bottom: 41px;right: 256px;width: 85px;">
-          <img src="./images/car-wheel.png" width="100%" alt="right wheel">
-        </div>
-      </div> -->
+      <div class="tesla-car--wheel front">
+        <img class="tesla-car--img__19" src="./images/car-wheel.png" alt="Front wheel">
+      </div>
+      <div class="tesla-car--wheel rear">
+        <img class="tesla-car--img__19" src="./images/car-wheel.png" alt="Rear wheel">
+      </div>
     </section>
 
-    <section class="justify-center">
-      <div>
-        <img src="./images/100d.png" width="100%" alt="Tesla 100d Model">
-        <h6 class="tesla-kmh">
+    <section class="tesla-km-results">
+      <div class="tesla-km-results--model">
+        <img class="tesla-km-resuls--img" src="./images/100d.png" alt="Tesla 100d Model">
+        <div class="tesla-km-results--number">
           <span id="100D-km"></span>
-        </h6>
+          <span class="tesla-km-results--unit">km</span>
+        </div>
       </div>
-      <div>
-        <img src="./images/p100d.png" width="100%" alt="Tesla p100d Model">
-        <h6 class="tesla-kmh">
+      <div class="tesla-km-results--model">
+        <img class="tesla-km-resuls--img" src="./images/p100d.png" alt="Tesla p100d Model">
+        <div class="tesla-km-results--number">
           <span id="P100D-km"></span>
-        </h6>
+          <span class="tesla-km-results--unit">km</span>
+        </div>
       </div>
     </section>
 
@@ -46,36 +43,21 @@
       <div class="tesla-settings">
         <label for="kmh">Speed</label>
         <div class="tesla-settings-container kmh">
-          <input
-            type="number"
-            step="10"
-            min="70"
-            max="140"
-            name="kmh"
-            id="kmh"
-            readonly
-          />
+          <input type="number" step="10" min="70" max="140" name="kmh" id="kmh" readonly />
           <div class="arrow-controls tesla-settings--arrows">
             <button name="kmh" control="up" class="tesla-arrows" />
-            <button name="kmh" control="down" class="tesla-arrows" / >
+            <button name="kmh" control="down" class="tesla-arrows" />
           </div>
         </div>
       </div>
+      <div class="separator"></div>
       <div class="tesla-settings">
         <label for="temp">Outside Temperature</label>
         <div class="tesla-settings-container degrees">
-          <input
-            type="number"
-            step="10"
-            min="-10"
-            max="40"
-            name="temp"
-            id="temp"
-            readonly
-          />
+          <input type="number" step="10" min="-10" max="40" name="temp" id="temp" readonly />
           <div class="arrow-controls tesla-settings--arrows">
-            <button name="temp" control="up" class="tesla-arrows" / >
-            <button name="temp" control="down" class="tesla-arrows" />
+            <button name="temp" control="up" class="tesla-arrows" />
+              <button name="temp" control="down" class="tesla-arrows" />
           </div>
         </div>
       </div>
@@ -84,43 +66,134 @@
         <i class="tesla-fan__mode"></i>
         <input type="checkbox" name="ac" id="ac" />
       </div>
-      <fieldset>
+      <div class="separator"></div>
+      <div class="tesla-wheel-size">
         <legend>Wheels</legend>
 
-        <div class="tesla-wheel--size">
+        <div>
           <input type="radio" id="wheel-19" name="wheelsize" value="19" />
-          <label for="wheel-19">
-            <div style="display: flex; justify-content: space-between; padding: 2em">
-              <img src="./images/icon-wheel.svg" alt="Tesla wheel 21'">
-              <h6> 
-                19"
-              </h6>
-            </div>
+          <label class="tesla-wheel-size--button" for="wheel-19">
+            <img class="tesla-wheel-size--img" src="./images/icon-wheel.svg" alt="Tesla wheel 21'">
+            <label>
+              19"
+            </label>
           </label>
         </div>
 
-        <div class="tesla-wheel--size">
+        <div>
           <input type="radio" id="wheel-21" name="wheelsize" value="21" />
-          <label for="wheel-21">
-            <div style="display: flex; justify-content: space-between; padding: 2em">
-              <img src="./images/icon-wheel.svg" alt="Tesla wheel 21'">
-              <h6> 
-                21"
-              </h6>
-            </div>
-          </label>
+          <div class="tesla-wheel-size--button" for="wheel-21">
+            <img class="tesla-wheel-size--img__big" src="./images/icon-wheel.svg" alt="Tesla wheel 21'">
+            <label>
+              21"
+            </label>
+          </div>
         </div>
-      </fieldset>
     </section>
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    100D:
-    <span id="100D-km"> </span>
-    P100D:
-    <span id="P100D-km"> </span>
-    <button id="print">print</button>
-  </body>
+  </main>
+
+  <footer class="footer">
+    <div class="footer--item">
+      <h6 class="footer--subheader">
+        Contact us
+      </h6>
+      <ul>
+        <li>
+          <a href="#">
+            +5491123862348
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            johanscedeno@gmail.com
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            Find a Store
+          </a>
+        </li>
+      </ul>
+    </div>
+    <div class="footer--item">
+      <h6 class="footer--subheader">
+        Customer Service
+      </h6>
+      <ul>
+        <li>
+          <a href="#">
+            Contact Us
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            Ordering & Payment
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            Shipping
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            Return
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            FAQ
+          </a>
+        </li>
+      </ul>
+    </div>
+    <div class="footer--item">
+      <h6 class="footer--subheader">
+        Information
+      </h6>
+      <ul>
+        <li>
+          <a href="#">
+            About this
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            Work with US
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            Privacy Policy
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            Terms & Conditions
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            Press Enquiries
+          </a>
+        </li>
+      </ul>
+    </div>
+    <div class="footer--item">
+      <h6 class="footer--subheader">
+        Subscribe to use via Email
+      </h6>
+      <p class="text-primary-clear">
+        Lorem ipsum dolor sit amet consectetur, add
+      </p>
+      <div class="footer--item__email">
+        <input class="footer--input" type="text" placeholder="Email Address">
+        <button class="footer--button">
+          Subscribe
+        </button>
+      </div>
+    </div>
+  </footer>
+</body>
+
 </html>

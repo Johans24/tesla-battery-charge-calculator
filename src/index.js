@@ -92,7 +92,3 @@ watchReactive(() => {
 });
 
 watchReactive(renderFunction);
-
-document
-  .getElementById("print")
-  .addEventListener("click", () => console.log({ model }));

@@ -3,53 +3,65 @@
   src: url(../public/fonts/Montserrat-Regular.ttf);
 }
 
-html {
+html, body {
   font-family: MontserratRegular;
+  margin: 0;
+}
+
+.container {
+  padding: 0 1em;
+  max-width: 80rem;
+  margin: 0 auto;
 }
 
 .tesla-car {
-  width: 100%;
-  min-height: 350px;
-  background: #fff url(../public/images/car-base.png) no-repeat top center;
-  background-size: contain; }
+  display: grid;
+  justify-content: center;
+  grid-template-columns: 1fr 1fr;
 
-.tesla-car-animation {
-  -webkit-animation: slide-in-elliptic-bottom-fwd 0.7s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
-	-moz-animation: slide-in-elliptic-bottom-fwd 0.7s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
-	animation: slide-in-elliptic-bottom-fwd 0.7s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
-  }  
+  &--base, &--wheel {
+    grid-row: 1 / 2;
+  }
 
-.tesla-wheels {
-  height: 247px;
-  width: 555px;
-  position: relative;
-  margin: 0 auto; }
+  &--base {
+    grid-column: 1 / 3;
+  }
 
+  &--wheel {
+    display: flex;
+    justify-items: end;
+    align-items: end;
+    margin-bottom: 10%;
+    &.front {
+      grid-column: 1 / -2;
+      margin-left: 50%;
+    }
 
-.tesla-wheel {
-  height: 100px;
-  width: 100px;
-  bottom: 0;
-  position: absolute;
-  background-repeat: no-repeat;
-  background-position: 0 0;
-  background-size: cover; }
-  .tesla-wheel--front {
-    left: 53px; }
-  .tesla-wheel--rear {
-    right: 72px; }
-  .tesla-wheel--19 {
-    background-image: url(../public/images/car-wheel.png);
-    -webkit-animation: infinite-spinning 250ms steps(6) infinite;
-    -moz-animation: infinite-spinning 250ms steps(6) infinite;
-    -o-animation: infinite-spinning 250ms steps(6) infinite;
-    animation: infinite-spinning 250ms steps(6) infinite; }
-  .tesla-wheel--21 {
-    background-image: url(../public/images/car-wheel.png);
-    -webkit-animation: infinite-spinning 480ms steps(12) infinite;
-    -moz-animation: infinite-spinning 480ms steps(12) infinite;
-    -o-animation: infinite-spinning 480ms steps(12) infinite;
-    animation: infinite-spinning 480ms steps(12) infinite; }
+    &.rear {
+      grid-column: 2 / -1;
+      margin-left: 28%;
+    }
+  }
+
+  &--img {
+    &__19 {
+      height: 38%;
+      -webkit-animation: infinite-spinning 250ms steps(6) infinite;
+      -moz-animation: infinite-spinning 250ms steps(6) infinite;
+      -o-animation: infinite-spinning 250ms steps(6) infinite;
+      animation: infinite-spinning 250ms steps(6) infinite;
+    }
+
+    &__21 {
+      -webkit-animation: infinite-spinning 480ms steps(12) infinite;
+      -moz-animation: infinite-spinning 480ms steps(12) infinite;
+      -o-animation: infinite-spinning 480ms steps(12) infinite;
+      animation: infinite-spinning 480ms steps(12) infinite;
+      height: 40%;
+    }
+  }
+}
+
 
 @keyframes infinite-spinning {
   from {
@@ -57,64 +69,100 @@ html {
     -moz-transform: rotate(0deg);
     -ms-transform: rotate(0deg);
     -o-transform: rotate(0deg);
-    transform: rotate(0deg); }
+    transform: rotate(0deg);
+  }
   to {
     -webkit-transform: rotate(360deg);
     -moz-transform: rotate(360deg);
     -ms-transform: rotate(360deg);
     -o-transform: rotate(360deg);
-    transform: rotate(360deg); } }
+    transform: rotate(360deg);
+  }
+}
 @-webkit-keyframes infinite-spinning {
   from {
     -webkit-transform: rotate(0deg);
     -moz-transform: rotate(0deg);
     -ms-transform: rotate(0deg);
     -o-transform: rotate(0deg);
-    transform: rotate(0deg); }
+    transform: rotate(0deg);
+  }
   to {
     -webkit-transform: rotate(360deg);
     -moz-transform: rotate(360deg);
     -ms-transform: rotate(360deg);
     -o-transform: rotate(360deg);
-    transform: rotate(360deg); } }
-
-:root {
-  --primary: #1897FE;
-  --primary-dark: #177ed2;
-  --heat: #Fe1818;
-  --heat-dark: #D21717;
-  --grey: #F0F2F7;
-  --dark-grey: #BCC2D3;
-  --darker-grey: #696868;
-  --medium-grey: #CCC;
-  --white: #fff;
-}    
-
-.justify-center {
-  display: flex;
-  justify-content: center;
-}
-
-.tesla-kmh {
-  color: var(--primary);
-  font-size: 46px;
-  position: relative;
-  margin: 1em 0;
-
-  &::after {
-    position: absolute;
-    font-size: 20px;
-    top: 7px;
-    right: 2px;
-    content: "KM"
+    transform: rotate(360deg);
   }
 }
+
+//////////////////////////////////////////////
+
+:root {
+  --primary: #1897fe;
+  --primary-dark: #177ed2;
+  --primary-clear: #7fc4fd;
+  --heat: #fe1818;
+  --heat-dark: #d21717;
+  --grey: #f0f2f7;
+  --dark-grey: #bcc2d3;
+  --darker-grey: #696868;
+  --medium-grey: #b9bed1;
+  --white: #fff;
+}
+
+.tesla-km-results {
+  display: flex;
+  justify-content: center;
+  gap: 6em;
+  margin: 2em 0;
+
+  &--model {
+    color: var(--primary);
+    font-size: 46px;
+    position: relative;
+  }
+
+  &--number {
+    display: flex;
+    gap: 1px;
+    align-items: start;
+  }
+
+  &--img {
+    max-width: 100%;
+  }
+
+  &--unit {
+    font-size: 20px;
+    text-transform: uppercase;
+  }
+}
+
+
+.text-primary {
+  color: var(--primary);
+}
+
+.text-primary-clear {
+  color: var(--primary-clear);
+}
+
+#battery-range-calculator {
+  label, legend {
+    color: var(--medium-grey);
+  }
+}
+
+.separator {
+  background-color: var(--medium-grey);
+}
+
 
 .grid-container {
   display: grid;
   gap: 1rem;
-  grid-auto-rows: minmax(100px, auto);
-  grid-template-columns: 2fr 2fr 1fr 4fr;
+  grid-template-columns: 2fr 1px 2fr 1fr 1px 4fr;
   // justify-items: center;
 }
 
@@ -128,7 +176,8 @@ input[type="number"] {
   font-size: inherit;
   background-color: transparent;
 
-  &::-webkit-inner-spin-button, &::-webkit-outer-spin-button {
+  &::-webkit-inner-spin-button,
+  &::-webkit-outer-spin-button {
     -webkit-appearance: none;
   }
 }
@@ -183,7 +232,7 @@ input[type="number"] {
         background-image: url(../public/images/icon-thin-chevron-up.svg);
       }
       &:last-child {
-        border-top: 1px solid var(--medium-grey);
+        border-top: 1px solid var(--dark-grey);
         background-image: url(../public/images/icon-thin-chevron-down.svg);
       }
     }
@@ -215,20 +264,44 @@ input[type="checkbox"] {
   &--active {
     color: var(--white);
     background: var(--primary);
-    background: -moz-linear-gradient(top, var(--primary) 0%, var(--primary-dark) 100%);
-    background: -webkit-linear-gradient(top, var(--primary) 0%, var(--primary-dark) 100%);
-    background: linear-gradient(to bottom, var(--primary) 0%, var(--primary-dark) 100%);
+    background: -moz-linear-gradient(
+      top,
+      var(--primary) 0%,
+      var(--primary-dark) 100%
+    );
+    background: -webkit-linear-gradient(
+      top,
+      var(--primary) 0%,
+      var(--primary-dark) 100%
+    );
+    background: linear-gradient(
+      to bottom,
+      var(--primary) 0%,
+      var(--primary-dark) 100%
+    );
   }
   &--active.tesla-heat {
     background: var(--heat);
-    background: -moz-linear-gradient(top, var(--heat) 0%, var(--heat-dark) 100%);
-    background: -webkit-linear-gradient(top, var(--heat) 0%, var(--heat-dark) 100%);
-    background: linear-gradient(to bottom, var(--heat) 0%, var(--heat-dark) 100%);
+    background: -moz-linear-gradient(
+      top,
+      var(--heat) 0%,
+      var(--heat-dark) 100%
+    );
+    background: -webkit-linear-gradient(
+      top,
+      var(--heat) 0%,
+      var(--heat-dark) 100%
+    );
+    background: linear-gradient(
+      to bottom,
+      var(--heat) 0%,
+      var(--heat-dark) 100%
+    );
   }
 
   &__mode {
-    width: 1.375em;
-    height: 1.375em;
+    min-width: 1.375em;
+    min-height: 1.375em;
     margin: 5px 0px;
     background-size: 100%;
     background-repeat: no-repeat;
@@ -254,18 +327,8 @@ input[type="checkbox"] {
   background-image: url(../public/images/icon-wave-white.svg);
 }
 
-
 input[type="radio"] {
-  -webkit-appearance: none;
-  appearance: none;
-  background-color: var(--grey);
-  height: 100%;
-  width: 100%;
-  border-radius: 5px;
-  position: absolute;
-  cursor: pointer;
-  outline: none;
-  transition: transform 0.2s;
+  display: none;
 }
 
 input[type="radio"]:checked {
@@ -273,18 +336,97 @@ input[type="radio"]:checked {
 }
 
 label {
-  margin: 10px;
   cursor: pointer;
-  z-index: 99999;
 }
 
-.tesla-wheel--size {
-  min-height: 4.375rem;
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  min-width: 0;
-  word-wrap: break-word;
-  background-clip: border-box;
-  border: 1px solid var(--dark-grey);
+.tesla-wheel-size {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: 2rem 5rem;
+  grid-column-gap: 1rem;
+  grid-row-gap: 1rem;
+
+  & > legend {
+    grid-area: 1 / 1 / 2 / 3;
+  }
+  &--button {
+    transition: transform 0.2s;
+    -webkit-appearance: none;
+    appearance: none;
+    background-color: var(--grey);
+    border-radius: 5px;
+    cursor: pointer;
+    outline: none;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 100%;
+  }
+  &--img {
+    height: 68%;
+    &__big {
+      height: 70%;
+    }
+  }
+  label {
+    font-size: 20px;
+  }
+}
+
+.footer {
+  background-color: black;
+  color: var(--white);
+  padding: 3em;
+  margin-top: 6em;
+  display: grid;
+  gap: 5rem;
+  grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr));
+
+  &--item {
+    font-size: 14px;
+    ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      line-height: 2;
+      font-size: 14px;
+  
+      a {
+        text-decoration: none;
+        color: var(--white);
+      }
+    }
+
+    &__email {
+      display: grid;
+      gap: 1em;
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+
+  &--button {
+    background-color: var(--white);
+    padding: 1em 2em;
+    color: var(--primary);
+    border-radius: 5px;
+    font-weight: bold;
+    font-size: 10px;
+    text-transform: uppercase;
+  }
+
+  &--input {
+    border-radius: 5px;
+    background-color: transparent;
+    border: 1px solid var(--primary);
+    color: var(--white);
+    padding: 1em;
+
+    &::placeholder {
+      color: var(--white);
+    }
+  }
+
+  &--subheader {
+    font-size: 10px;
+  }
 }
