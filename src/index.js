@@ -32,7 +32,7 @@ document
   .addEventListener("change", ({ target: eventTarget }) => {
     const { name, value, checked, type } = eventTarget;
     const isCheckbox = type === "checkbox";
-    const valueToUse = isCheckbox ? checked && "on" || "off" : value;
+    const valueToUse = isCheckbox ? (checked && "on") || "off" : value;
 
     model[name] = valueToUse;
   });
@@ -62,28 +62,25 @@ document.getElementById("tesla-fan").addEventListener("click", () => {
 const renderFunction = () => {
   document.getElementById("100D-km").innerHTML = model.d100Km;
   document.getElementById("P100D-km").innerHTML = model.pD100Km;
+  const wheels = [...document.querySelectorAll(".tesla-wheels")];
   const acLabel = document.getElementById("ac-label");
   const acFan = document.getElementById("tesla-fan");
   const acCheckbox = document.getElementById("ac");
   const modelAc = model.ac;
+  const modelWheelsize = model.wheelsize;
   const acOn = modelAc === "on";
   const tempMinus10 = model.temp <= 10;
 
   acCheckbox.checked = acOn;
-  acLabel.innerHTML = `${tempMinus10 ? 'heat' : 'ac'} ${modelAc}`;
-  if (acOn) {
-    acFan.classList.add("tesla-fan--active");
-  } else {
-    acFan.classList.remove("tesla-fan--active");
-  }
-  // acOn && acFan.classList.toggle("tesla-fan--active");
+  acLabel.innerHTML = `${tempMinus10 ? "heat" : "ac"} ${modelAc}`;
 
-  if (tempMinus10) {
-    acFan.classList.add("tesla-heat");
-  } else {
-    acFan.classList.remove("tesla-heat");
-  }
-  // tempMinus10 && acFan.classList.toggle("tesla-heat")
+  wheels.forEach((wheel) => {
+    wheel.classList.toggle("tesla-car--img__19", modelWheelsize == "19");
+    wheel.classList.toggle("tesla-car--img__21", modelWheelsize == "21");
+  });
+
+  acFan.classList.toggle("tesla-fan--active", acOn);
+  acFan.classList.toggle("tesla-heat", tempMinus10);
 };
 
 watchReactive(() => {
