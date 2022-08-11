@@ -1,0 +1,11 @@
+@media (min-width: 45em) {
+  .calculator-container {
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: 2fr 1px 2fr 1fr 1px 4fr;
+  }
+
+  .tesla-fan {
+    justify-self: center;
+  }
+}

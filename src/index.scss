@@ -4,6 +4,7 @@
 @use "./scss/tesla-fan";
 @use "./scss/tesla-wheel-size";
 @use "./scss/animations";
+@use "./scss/responsive";
 @use "./scss/footer";
 
 @font-face {
@@ -28,6 +29,7 @@ html,
 body {
   font-family: MontserratRegular;
   margin: 0;
+  scroll-behavior: smooth;
 }
 
 body {
@@ -47,11 +49,9 @@ body {
   color: var(--primary-clear);
 }
 
-
 .calculator-input-label {
   color: var(--medium-grey);
 }
-
 
 .separator {
   background-color: var(--medium-grey);
@@ -63,8 +63,50 @@ body {
   margin-top: 2.5em;
 }
 
-.grid-container {
+.calculator-container {
   display: grid;
-  gap: 1rem;
-  grid-template-columns: 2fr 1px 2fr 1fr 1px 4fr;
+  gap: 1em;
+}
+
+.topbar {
+  margin-bottom: auto;
+  padding: 1em 0;
+  display: flex;
+  justify-content: center;
+  background-color: black;
+  max-height: 3em;
+}
+
+.tesla-description {
+  display: flex;
+  justify-content: center;
+  margin: 2em 0;
+  align-items: center;
+
+  &--container {
+    max-width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    gap: 3em;
+  }
+
+  h1 {
+    text-align: center;
+    font-size: 54px;
+    margin: 0;
+  }
+  p {
+    text-align: center;
+    margin: 0;
+  }
+  .go-to-range-per-change {
+    background: var(--white) url(../public/images/icon-chevron-down.svg)
+      no-repeat center center;
+    border-radius: 50%;
+    min-width: 4.5em;
+    min-height: 4.5em;
+    border: 2px solid black;
+  }
 }

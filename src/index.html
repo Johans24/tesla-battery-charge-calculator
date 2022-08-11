@@ -9,7 +9,22 @@
 </head>
 
 <body>
+  <div class="topbar">
+    <img src="./images/logo.png" alt="Tesla Logo">
+  </div>
   <main class="container">
+    <section class="tesla-description">
+      <div class="tesla-description--container">
+        <h1>
+          Far far away, behind the word mountains…
+        </h1>
+        <p>
+          A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a
+          paradisematic country, in which roasted parts of sentences fly into your mouth.
+        </p>
+        <a class="go-to-range-per-change" href="#battery-range-calculator"></a>
+      </div>
+    </section>
     <!-- SSR? Display data manually? -->
     <noscript>
       Whoops! you need to enable Javascript to see the Battery Range Calculator
@@ -18,26 +33,31 @@
       <template id="battery-range-calculator">
         <section class="tesla-car">
           <div class="tesla-car--base">
-            <img class="tesla-car--base__img" src="./images/car-base.png" alt="Tesla Car">
+            <img class="tesla-car--base__img" src="./images/car-base.png" srcset="./images/car-base@2x.png 2x"
+              alt="Tesla Car">
           </div>
           <div class="tesla-car--wheel front">
-            <img class="tesla-wheels" src="./images/car-wheel.png" alt="Front wheel">
+            <img class="tesla-wheels" src="./images/car-wheel.png"
+              srcset="./images/car-wheel.png,./images/car-wheel@2x.png 2x" alt="Front wheel">
           </div>
           <div class="tesla-car--wheel rear">
-            <img class="tesla-wheels" src="./images/car-wheel.png" alt="Rear wheel">
+            <img class="tesla-wheels" src="./images/car-wheel.png"
+              srcset="./images/car-wheel.png,./images/car-wheel@2x.png 2x" alt="Rear wheel">
           </div>
         </section>
 
         <section class="tesla-km-results">
           <div class="tesla-km-results--model">
-            <img class="tesla-km-resuls--img" src="./images/100d.png" alt="Tesla 100d Model">
+            <img class="tesla-km-resuls--img" src="./images/100d.png" srcset="./images/100d.png,./images/100d@2x.png 2x"
+              alt="Tesla 100d Model">
             <div class="tesla-km-results--number">
               <span id="100D-km"></span>
               <span class="tesla-km-results--unit">km</span>
             </div>
           </div>
           <div class="tesla-km-results--model">
-            <img class="tesla-km-resuls--img" src="./images/p100d.png" alt="Tesla p100d Model">
+            <img class="tesla-km-resuls--img" src="./images/p100d.png"
+              srcset="./images/p100d.png,./images/p100d@2x.png 2x" alt="Tesla p100d Model">
             <div class="tesla-km-results--number">
               <span id="P100D-km"></span>
               <span class="tesla-km-results--unit">km</span>
@@ -45,7 +65,7 @@
           </div>
         </section>
 
-        <section class="grid-container" id="battery-range-calculator-inputs">
+        <section class="calculator-container" id="battery-range-calculator-inputs">
           <div class="tesla-settings">
             <label class="calculator-input-label" for="kmh">Speed</label>
             <div class="tesla-settings-container kmh">
