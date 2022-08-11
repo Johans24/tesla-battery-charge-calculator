@@ -7,7 +7,7 @@
   grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr));
   margin-top: auto;
 
-  &--item {
+  &__item {
     font-size: 14px;
     ul {
       list-style: none;
@@ -22,14 +22,14 @@
       }
     }
 
-    &__email {
+    &--email {
       display: grid;
       gap: 1em;
       grid-template-columns: 1fr 1fr;
     }
   }
 
-  &--button {
+  &__button {
     background-color: var(--white);
     padding: 1em 2em;
     color: var(--primary);
@@ -39,7 +39,7 @@
     text-transform: uppercase;
   }
 
-  &--input {
+  &__input {
     border-radius: 5px;
     background-color: transparent;
     border: 1px solid var(--primary);
@@ -51,7 +51,7 @@
     }
   }
 
-  &--subheader {
+  &__subheader {
     font-size: 10px;
   }
 }

@@ -14,7 +14,7 @@
   </div>
   <main class="container">
     <section class="tesla-description">
-      <div class="tesla-description--container">
+      <div class="tesla-description__container">
         <h1>
           Far far away, behind the word mountains…
         </h1>
@@ -32,35 +32,35 @@
     <div id="js-container">
       <template id="battery-range-calculator">
         <section class="tesla-car">
-          <div class="tesla-car--base">
-            <img class="tesla-car--base__img" src="./images/car-base.png" srcset="./images/car-base@2x.png 2x"
+          <div class="tesla-car__base">
+            <img class="tesla-car__base__img" src="./images/car-base.png" srcset="./images/car-base@2x.png 2x"
               alt="Tesla Car">
           </div>
-          <div class="tesla-car--wheel front">
+          <div class="tesla-car__wheel front">
             <img class="tesla-wheels" src="./images/car-wheel.png"
               srcset="./images/car-wheel.png,./images/car-wheel@2x.png 2x" alt="Front wheel">
           </div>
-          <div class="tesla-car--wheel rear">
+          <div class="tesla-car__wheel rear">
             <img class="tesla-wheels" src="./images/car-wheel.png"
               srcset="./images/car-wheel.png,./images/car-wheel@2x.png 2x" alt="Rear wheel">
           </div>
         </section>
 
         <section class="tesla-km-results">
-          <div class="tesla-km-results--model">
-            <img class="tesla-km-resuls--img" src="./images/100d.png" srcset="./images/100d.png,./images/100d@2x.png 2x"
+          <div class="tesla-km-results__model">
+            <img class="tesla-km-resuls__img" src="./images/100d.png" srcset="./images/100d.png,./images/100d@2x.png 2x"
               alt="Tesla 100d Model">
-            <div class="tesla-km-results--number">
+            <div class="tesla-km-results__number">
               <span id="100D-km"></span>
-              <span class="tesla-km-results--unit">km</span>
+              <span class="tesla-km-results__unit">km</span>
             </div>
           </div>
-          <div class="tesla-km-results--model">
-            <img class="tesla-km-resuls--img" src="./images/p100d.png"
+          <div class="tesla-km-results__model">
+            <img class="tesla-km-resuls__img" src="./images/p100d.png"
               srcset="./images/p100d.png,./images/p100d@2x.png 2x" alt="Tesla p100d Model">
-            <div class="tesla-km-results--number">
+            <div class="tesla-km-results__number">
               <span id="P100D-km"></span>
-              <span class="tesla-km-results--unit">km</span>
+              <span class="tesla-km-results__unit">km</span>
             </div>
           </div>
         </section>
@@ -68,9 +68,9 @@
         <section class="calculator-container" id="battery-range-calculator-inputs">
           <div class="tesla-settings">
             <label class="calculator-input-label" for="kmh">Speed</label>
-            <div class="tesla-settings-container kmh">
+            <div class="tesla-settings__container kmh">
               <input type="number" step="10" min="70" max="140" name="kmh" id="kmh" readonly />
-              <div class="arrow-controls tesla-settings--arrows">
+              <div class="arrow-controls tesla-settings__arrows">
                 <button name="kmh" control="up" class="tesla-arrows" />
                 <button name="kmh" control="down" class="tesla-arrows" />
               </div>
@@ -79,9 +79,9 @@
           <div class="separator"></div>
           <div class="tesla-settings">
             <label class="calculator-input-label" for="temp">Outside Temperature</label>
-            <div class="tesla-settings-container degrees">
+            <div class="tesla-settings__container degrees">
               <input type="number" step="10" min="-10" max="40" name="temp" id="temp" readonly />
-              <div class="arrow-controls tesla-settings--arrows">
+              <div class="arrow-controls tesla-settings__arrows">
                 <button name="temp" control="up" class="tesla-arrows" />
                 <button name="temp" control="down" class="tesla-arrows" />
               </div>
@@ -96,21 +96,21 @@
           <div class="tesla-wheel-size">
             <legend class="calculator-input-label">Wheels</legend>
 
-            <div class="tesla-wheel-size--selector">
+            <div class="tesla-wheel-size__selector">
               <input type="radio" id="wheel-19" name="wheelsize" value="19" />
-              <div class="tesla-wheel-size--button" for="wheel-19">
-                <img class="tesla-wheel-size--img" src="./images/icon-wheel.svg" alt="Tesla wheel 21'">
-                <p class="tesla-wheel-size--label">
+              <div class="tesla-wheel-size__button" for="wheel-19">
+                <img class="tesla-wheel-size__img" src="./images/icon-wheel.svg" alt="Tesla wheel 21'">
+                <p class="tesla-wheel-size__label">
                   19"
                 </p>
               </div>
             </div>
 
-            <div class="tesla-wheel-size--selector">
+            <div class="tesla-wheel-size__selector">
               <input type="radio" id="wheel-21" name="wheelsize" value="21" />
-              <div class="tesla-wheel-size--button" for="wheel-21">
-                <img class="tesla-wheel-size--img__big" src="./images/icon-wheel.svg" alt="Tesla wheel 21'">
-                <p class="tesla-wheel-size--label">
+              <div class="tesla-wheel-size__button" for="wheel-21">
+                <img class="tesla-wheel-size__img--big" src="./images/icon-wheel.svg" alt="Tesla wheel 21'">
+                <p class="tesla-wheel-size__label">
                   21"
                 </p>
               </div>
@@ -126,8 +126,8 @@
     </p>
   </main>
   <footer class="footer">
-    <div class="footer--item">
-      <h6 class="footer--subheader">
+    <div class="footer__item">
+      <h6 class="footer__subheader">
         Contact us
       </h6>
       <ul>
@@ -148,8 +148,8 @@
         </li>
       </ul>
     </div>
-    <div class="footer--item">
-      <h6 class="footer--subheader">
+    <div class="footer__item">
+      <h6 class="footer__subheader">
         Customer Service
       </h6>
       <ul>
@@ -180,8 +180,8 @@
         </li>
       </ul>
     </div>
-    <div class="footer--item">
-      <h6 class="footer--subheader">
+    <div class="footer__item">
+      <h6 class="footer__subheader">
         Information
       </h6>
       <ul>
@@ -212,16 +212,16 @@
         </li>
       </ul>
     </div>
-    <div class="footer--item">
-      <h6 class="footer--subheader">
+    <div class="footer__item">
+      <h6 class="footer__subheader">
         Subscribe to use via Email
       </h6>
       <p class="text-primary-clear">
         Lorem ipsum dolor sit amet consectetur, add
       </p>
-      <div class="footer--item__email">
-        <input class="footer--input" type="text" placeholder="Email Address">
-        <button class="footer--button">
+      <div class="footer__item--email">
+        <input class="footer__input" type="text" placeholder="Email Address">
+        <button class="footer__button">
           Subscribe
         </button>
       </div>

@@ -3,11 +3,11 @@
   justify-content: center;
   grid-template-columns: 1fr 1fr;
 
-  &--base, &--wheel {
+  &__base, &__wheel {
     grid-row: 1 / 2;
   }
 
-  &--base {
+  &__base {
     grid-column: 1 / 3;
 
     img {
@@ -15,7 +15,7 @@
     }
   }
 
-  &--wheel {
+  &__wheel {
     display: flex;
     justify-items: end;
     align-items: end;
@@ -31,8 +31,8 @@
     }
   }
 
-  &--img {
-    &__19 {
+  &__img {
+    &--19 {
       height: 38%;
       -webkit-animation: infinite-spinning 250ms steps(6) infinite;
       -moz-animation: infinite-spinning 250ms steps(6) infinite;
@@ -40,7 +40,7 @@
       animation: infinite-spinning 250ms steps(6) infinite;
     }
 
-    &__21 {
+    &--21 {
       -webkit-animation: infinite-spinning 500ms steps(12) infinite;
       -moz-animation: infinite-spinning 500ms steps(12) infinite;
       -o-animation: infinite-spinning 500ms steps(12) infinite;

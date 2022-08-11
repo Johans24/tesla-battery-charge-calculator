@@ -13,7 +13,7 @@ input[type="radio"]:checked {
   border: 1px solid var(--primary);
 }
 
-.tesla-wheel-size--selector {
+.tesla-wheel-size__selector {
   position: relative;
   border: 1px solid var(--dark-grey);
   background-color: var(--grey);
@@ -28,19 +28,19 @@ input[type="radio"]:checked {
   & > legend {
     grid-column: span 2;
   }
-  &--button {
+  &__button {
     height: 100%;
     display: flex;
     justify-content: space-around;
     align-items: center;
   }
-  &--img {
+  &__img {
     max-width: 3rem;
-    &__big {
+    &--big {
       max-width: 4rem;
     }
   }
-  &--label {
+  &__label {
     font-size: 20px;
     color: var(--darker-grey);
     margin: 0;

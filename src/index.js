@@ -56,8 +56,8 @@ const renderFunction = () => {
   acLabel.innerHTML = `${tempMinus10 ? "heat" : "ac"} ${modelAc}`;
 
   wheels.forEach((wheel) => {
-    wheel.classList.toggle("tesla-car--img__19", modelWheelsize == "19");
-    wheel.classList.toggle("tesla-car--img__21", modelWheelsize == "21");
+    wheel.classList.toggle("tesla-car__img--19", modelWheelsize == "19");
+    wheel.classList.toggle("tesla-car__img--21", modelWheelsize == "21");
   });
 
   acFan.classList.toggle("tesla-fan--active", acOn);

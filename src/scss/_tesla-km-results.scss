@@ -4,23 +4,23 @@
   gap: 6em;
   margin: 2em 0;
 
-  &--model {
+  &__model {
     color: var(--primary);
     font-size: 46px;
     position: relative;
   }
 
-  &--number {
+  &__number {
     display: flex;
     gap: 1px;
     align-items: start;
   }
 
-  &--img {
+  &__img {
     max-width: 100%;
   }
 
-  &--unit {
+  &__unit {
     font-size: 20px;
     text-transform: uppercase;
   }
