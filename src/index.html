@@ -10,6 +10,10 @@
 
 <body>
   <main class="container">
+    <!-- SSR? Display data manually? -->
+    <noscript>
+      Whoops! you need to enable Javascript to see the Battery Range Calculator
+    </noscript>
     <div id="js-container">
       <template id="battery-range-calculator">
         <section class="tesla-car">
@@ -23,7 +27,7 @@
             <img class="tesla-wheels" src="./images/car-wheel.png" alt="Rear wheel">
           </div>
         </section>
-    
+
         <section class="tesla-km-results">
           <div class="tesla-km-results--model">
             <img class="tesla-km-resuls--img" src="./images/100d.png" alt="Tesla 100d Model">
@@ -40,10 +44,10 @@
             </div>
           </div>
         </section>
-    
+
         <section class="grid-container" id="battery-range-calculator-inputs">
           <div class="tesla-settings">
-            <label for="kmh">Speed</label>
+            <label class="calculator-input-label" for="kmh">Speed</label>
             <div class="tesla-settings-container kmh">
               <input type="number" step="10" min="70" max="140" name="kmh" id="kmh" readonly />
               <div class="arrow-controls tesla-settings--arrows">
@@ -54,12 +58,12 @@
           </div>
           <div class="separator"></div>
           <div class="tesla-settings">
-            <label for="temp">Outside Temperature</label>
+            <label class="calculator-input-label" for="temp">Outside Temperature</label>
             <div class="tesla-settings-container degrees">
               <input type="number" step="10" min="-10" max="40" name="temp" id="temp" readonly />
               <div class="arrow-controls tesla-settings--arrows">
                 <button name="temp" control="up" class="tesla-arrows" />
-                  <button name="temp" control="down" class="tesla-arrows" />
+                <button name="temp" control="down" class="tesla-arrows" />
               </div>
             </div>
           </div>
@@ -70,8 +74,8 @@
           </div>
           <div class="separator"></div>
           <div class="tesla-wheel-size">
-            <legend>Wheels</legend>
-    
+            <legend class="calculator-input-label">Wheels</legend>
+
             <div class="tesla-wheel-size--selector">
               <input type="radio" id="wheel-19" name="wheelsize" value="19" />
               <div class="tesla-wheel-size--button" for="wheel-19">
@@ -81,7 +85,7 @@
                 </p>
               </div>
             </div>
-    
+
             <div class="tesla-wheel-size--selector">
               <input type="radio" id="wheel-21" name="wheelsize" value="21" />
               <div class="tesla-wheel-size--button" for="wheel-21">
@@ -93,14 +97,15 @@
             </div>
         </section>
       </template>
-      <!-- SSR? Display data manually? -->
-      <noscript>
-        Whoops! you need to enable Javascript to see the Battery Range Calculator
-      </noscript>
     </div>
+    <p class="battery-range-calculator-disclaimer">
+      The actual amount of range that you experience will vary based on your particular use conditions. Your vehicle
+      range is also dependent on other conditions, such as vehicle configuration, battery age and condition, driving
+      style and operating, environmental and climate conditions. See how some of these particular use conditions may
+      affect your range in our simulation model.
+    </p>
   </main>
-<footer>
-  <div class="footer">
+  <footer class="footer">
     <div class="footer--item">
       <h6 class="footer--subheader">
         Contact us
@@ -201,8 +206,7 @@
         </button>
       </div>
     </div>
-  </div>
-</footer>
+  </footer>
 </body>
 
 </html>

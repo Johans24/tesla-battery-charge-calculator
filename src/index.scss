@@ -30,35 +30,41 @@ body {
   margin: 0;
 }
 
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
 .container {
   padding: 0 1em;
   max-width: 80rem;
   margin: 0 auto;
-  // margin-bottom: calc(100vh - 5em);
-}
-
-.text-primary {
-  color: var(--primary);
+  padding-bottom: 5em;
 }
 
 .text-primary-clear {
   color: var(--primary-clear);
 }
 
-#battery-range-calculator-inputs {
-  label,
-  legend {
-    color: var(--medium-grey);
-  }
+
+.calculator-input-label {
+  color: var(--medium-grey);
 }
+
 
 .separator {
   background-color: var(--medium-grey);
+}
+
+.battery-range-calculator-disclaimer {
+  font-size: 15px;
+  line-height: 1.5;
+  margin-top: 2.5em;
 }
 
 .grid-container {
   display: grid;
   gap: 1rem;
   grid-template-columns: 2fr 1px 2fr 1fr 1px 4fr;
-  // justify-items: center;
 }
