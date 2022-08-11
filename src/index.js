@@ -1,9 +1,10 @@
 import metrics100D from "./data/metric-100D.json";
 import metricsP100D from "./data/metric-P100D.json";
-import { normalizeTeslaModelData, calculateKm } from "./utils/utils";
-import { initReactivity, watchReactive } from "./utils/reactivity";
+import { normalizeTeslaModelData, calculateKm } from "./js/utils";
+import { initReactivity, watchReactive } from "./js/reactivity";
 
 import "./index.scss";
+import { loadBatteryRangeCalculator } from "./js/dom";
 
 const normalizedD100 = normalizeTeslaModelData(metrics100D);
 const normalizedP100D = normalizeTeslaModelData(metricsP100D);
@@ -18,6 +19,7 @@ const initialState = {
 };
 
 const model = initReactivity(initialState);
+loadBatteryRangeCalculator();
 
 Object.keys(initialState).forEach((key) => {
   const [input] = document.getElementsByName(key);
@@ -28,7 +30,7 @@ Object.keys(initialState).forEach((key) => {
 });
 
 document
-  .getElementById("battery-range-calculator")
+  .getElementById("battery-range-calculator-inputs")
   .addEventListener("change", ({ target: eventTarget }) => {
     const { name, value, checked, type } = eventTarget;
     const isCheckbox = type === "checkbox";
@@ -37,27 +39,6 @@ document
     model[name] = valueToUse;
   });
 
-[...document.querySelectorAll(".arrow-controls")].forEach((elem) => {
-  elem.addEventListener("click", ({ target: arrow }) => {
-    const { name } = arrow;
-    const control = arrow.getAttribute("control");
-    const input = document.getElementById(name);
-    if (control === "up") {
-      input.stepUp();
-    } else {
-      input.stepDown();
-    }
-    const change = new Event("change", { bubbles: true });
-    input.dispatchEvent(change);
-  });
-});
-
-document.getElementById("tesla-fan").addEventListener("click", () => {
-  const checkbox = document.getElementById("ac");
-  checkbox.checked = !checkbox.checked;
-  const change = new Event("change", { bubbles: true });
-  checkbox.dispatchEvent(change);
-});
 
 const renderFunction = () => {
   document.getElementById("100D-km").innerHTML = model.d100Km;
