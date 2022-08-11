@@ -1,102 +1,15 @@
+@use "./scss/tesla-car";
+@use "./scss/tesla-km-results";
+@use "./scss/tesla-settings";
+@use "./scss/tesla-fan";
+@use "./scss/tesla-wheel-size";
+@use "./scss/animations";
+@use "./scss/footer";
+
 @font-face {
   font-family: MontserratRegular;
   src: url(../public/fonts/Montserrat-Regular.ttf);
 }
-
-html, body {
-  font-family: MontserratRegular;
-  margin: 0;
-}
-
-.container {
-  padding: 0 1em;
-  max-width: 80rem;
-  margin: 0 auto;
-}
-
-.tesla-car {
-  display: grid;
-  justify-content: center;
-  grid-template-columns: 1fr 1fr;
-
-  &--base, &--wheel {
-    grid-row: 1 / 2;
-  }
-
-  &--base {
-    grid-column: 1 / 3;
-  }
-
-  &--wheel {
-    display: flex;
-    justify-items: end;
-    align-items: end;
-    margin-bottom: 10%;
-    &.front {
-      grid-column: 1 / -2;
-      margin-left: 50%;
-    }
-
-    &.rear {
-      grid-column: 2 / -1;
-      margin-left: 28%;
-    }
-  }
-
-  &--img {
-    &__19 {
-      height: 38%;
-      -webkit-animation: infinite-spinning 250ms steps(6) infinite;
-      -moz-animation: infinite-spinning 250ms steps(6) infinite;
-      -o-animation: infinite-spinning 250ms steps(6) infinite;
-      animation: infinite-spinning 250ms steps(6) infinite;
-    }
-
-    &__21 {
-      -webkit-animation: infinite-spinning 500ms steps(12) infinite;
-      -moz-animation: infinite-spinning 500ms steps(12) infinite;
-      -o-animation: infinite-spinning 500ms steps(12) infinite;
-      animation: infinite-spinning 500ms steps(12) infinite;
-      height: 40%;
-    }
-  }
-}
-
-
-@keyframes infinite-spinning {
-  from {
-    -webkit-transform: rotate(0deg);
-    -moz-transform: rotate(0deg);
-    -ms-transform: rotate(0deg);
-    -o-transform: rotate(0deg);
-    transform: rotate(0deg);
-  }
-  to {
-    -webkit-transform: rotate(360deg);
-    -moz-transform: rotate(360deg);
-    -ms-transform: rotate(360deg);
-    -o-transform: rotate(360deg);
-    transform: rotate(360deg);
-  }
-}
-@-webkit-keyframes infinite-spinning {
-  from {
-    -webkit-transform: rotate(0deg);
-    -moz-transform: rotate(0deg);
-    -ms-transform: rotate(0deg);
-    -o-transform: rotate(0deg);
-    transform: rotate(0deg);
-  }
-  to {
-    -webkit-transform: rotate(360deg);
-    -moz-transform: rotate(360deg);
-    -ms-transform: rotate(360deg);
-    -o-transform: rotate(360deg);
-    transform: rotate(360deg);
-  }
-}
-
-//////////////////////////////////////////////
 
 :root {
   --primary: #1897fe;
@@ -111,34 +24,18 @@ html, body {
   --white: #fff;
 }
 
-.tesla-km-results {
-  display: flex;
-  justify-content: center;
-  gap: 6em;
-  margin: 2em 0;
-
-  &--model {
-    color: var(--primary);
-    font-size: 46px;
-    position: relative;
-  }
-
-  &--number {
-    display: flex;
-    gap: 1px;
-    align-items: start;
-  }
-
-  &--img {
-    max-width: 100%;
-  }
-
-  &--unit {
-    font-size: 20px;
-    text-transform: uppercase;
-  }
+html,
+body {
+  font-family: MontserratRegular;
+  margin: 0;
 }
 
+.container {
+  padding: 0 1em;
+  max-width: 80rem;
+  margin: 0 auto;
+  // margin-bottom: calc(100vh - 5em);
+}
 
 .text-primary {
   color: var(--primary);
@@ -149,7 +46,8 @@ html, body {
 }
 
 #battery-range-calculator-inputs {
-  label, legend {
+  label,
+  legend {
     color: var(--medium-grey);
   }
 }
@@ -158,275 +56,9 @@ html, body {
   background-color: var(--medium-grey);
 }
 
-
 .grid-container {
   display: grid;
   gap: 1rem;
   grid-template-columns: 2fr 1px 2fr 1fr 1px 4fr;
   // justify-items: center;
-}
-
-input[type="number"] {
-  -webkit-appearance: textfield;
-  -moz-appearance: textfield;
-  appearance: textfield;
-  outline: none;
-  border: none;
-  cursor: auto;
-  font-size: inherit;
-  background-color: transparent;
-
-  &::-webkit-inner-spin-button,
-  &::-webkit-outer-spin-button {
-    -webkit-appearance: none;
-  }
-}
-
-.tesla-settings {
-  min-width: 12rem;
-  &-container {
-    position: relative;
-    border: 1px solid var(--dark-grey);
-    padding: 0.875rem;
-    font-size: 34px;
-    background-color: var(--grey);
-    &::after {
-      position: absolute;
-      margin: auto 0;
-      font-weight: bold;
-      font-size: 20px;
-    }
-
-    &.kmh::after {
-      content: "KMH";
-      left: 4em;
-      bottom: 1em;
-    }
-
-    &.degrees::after {
-      content: "°";
-      left: 3.2em;
-      bottom: 1.5em;
-    }
-  }
-
-  &--arrows {
-    position: absolute;
-    display: grid;
-    right: 0.2em;
-    top: 0.1em;
-    height: 100%;
-
-    button {
-      outline: 0;
-      width: 30px;
-      color: var(--primary);
-      cursor: pointer;
-      border: 0;
-      background-size: 60%;
-      background-position: center;
-      background-repeat: no-repeat;
-      background-color: transparent;
-
-      &:first-child {
-        background-image: url(../public/images/icon-thin-chevron-up.svg);
-      }
-      &:last-child {
-        border-top: 1px solid var(--dark-grey);
-        background-image: url(../public/images/icon-thin-chevron-down.svg);
-      }
-    }
-  }
-}
-
-input[type="checkbox"] {
-  border: 0;
-  height: 1px;
-  width: 1px;
-  overflow: hidden;
-  position: absolute;
-}
-
-.tesla-fan {
-  cursor: pointer;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  width: 6.25em;
-  height: 6.25em;
-  border: 5px solid #f7f7f7;
-  border-radius: 50%;
-  box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.3);
-  color: var(--darker-grey);
-  background: var(--white);
-
-  &--active {
-    color: var(--white);
-    background: var(--primary);
-    background: -moz-linear-gradient(
-      top,
-      var(--primary) 0%,
-      var(--primary-dark) 100%
-    );
-    background: -webkit-linear-gradient(
-      top,
-      var(--primary) 0%,
-      var(--primary-dark) 100%
-    );
-    background: linear-gradient(
-      to bottom,
-      var(--primary) 0%,
-      var(--primary-dark) 100%
-    );
-  }
-  &--active.tesla-heat {
-    background: var(--heat);
-    background: -moz-linear-gradient(
-      top,
-      var(--heat) 0%,
-      var(--heat-dark) 100%
-    );
-    background: -webkit-linear-gradient(
-      top,
-      var(--heat) 0%,
-      var(--heat-dark) 100%
-    );
-    background: linear-gradient(
-      to bottom,
-      var(--heat) 0%,
-      var(--heat-dark) 100%
-    );
-  }
-
-  &__mode {
-    min-width: 1.375em;
-    min-height: 1.375em;
-    margin: 5px 0px;
-    background-size: 100%;
-    background-repeat: no-repeat;
-    background-position: center;
-    background-image: url(../public/images/icon-fan-gray.svg);
-  }
-
-  label {
-    margin: 15px 0 0;
-    text-align: center;
-    font-size: 8px;
-    text-transform: uppercase;
-  }
-}
-
-.tesla-heat .tesla-fan__mode {
-  background-image: url(../public/images/icon-wave-gray.svg);
-}
-.tesla-fan--active .tesla-fan__mode {
-  background-image: url(../public/images/icon-fan-white.svg);
-}
-.tesla-fan--active.tesla-heat .tesla-fan__mode {
-  background-image: url(../public/images/icon-wave-white.svg);
-}
-
-input[type="radio"] {
-  // display: none;
-}
-
-input[type="radio"]:checked {
-  border: 1px solid var(--primary);
-}
-
-label {
-  cursor: pointer;
-}
-
-.tesla-wheel-size {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  grid-template-rows: 2rem 5rem;
-  grid-column-gap: 1rem;
-  grid-row-gap: 1rem;
-
-  & > legend {
-    grid-area: 1 / 1 / 2 / 3;
-  }
-  &--button {
-    transition: transform 0.2s;
-    -webkit-appearance: none;
-    appearance: none;
-    background-color: var(--grey);
-    border-radius: 5px;
-    cursor: pointer;
-    outline: none;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    height: 100%;
-  }
-  &--img {
-    height: 68%;
-    &__big {
-      height: 70%;
-    }
-  }
-  label {
-    font-size: 20px;
-  }
-}
-
-.footer {
-  background-color: black;
-  color: var(--white);
-  padding: 3em;
-  margin-top: 6em;
-  display: grid;
-  gap: 5rem;
-  grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr));
-
-  &--item {
-    font-size: 14px;
-    ul {
-      list-style: none;
-      margin: 0;
-      padding: 0;
-      line-height: 2;
-      font-size: 14px;
-  
-      a {
-        text-decoration: none;
-        color: var(--white);
-      }
-    }
-
-    &__email {
-      display: grid;
-      gap: 1em;
-      grid-template-columns: 1fr 1fr;
-    }
-  }
-
-  &--button {
-    background-color: var(--white);
-    padding: 1em 2em;
-    color: var(--primary);
-    border-radius: 5px;
-    font-weight: bold;
-    font-size: 10px;
-    text-transform: uppercase;
-  }
-
-  &--input {
-    border-radius: 5px;
-    background-color: transparent;
-    border: 1px solid var(--primary);
-    color: var(--white);
-    padding: 1em;
-
-    &::placeholder {
-      color: var(--white);
-    }
-  }
-
-  &--subheader {
-    font-size: 10px;
-  }
 }

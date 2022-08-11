@@ -1,0 +1,88 @@
+input[type="checkbox"] {
+  border: 0;
+  height: 1px;
+  width: 1px;
+  overflow: hidden;
+  position: absolute;
+}
+
+.tesla-fan {
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  justify-self: center;
+  width: 6.25em;
+  height: 6.25em;
+  border: 5px solid #f7f7f7;
+  border-radius: 50%;
+  box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.3);
+  color: var(--darker-grey);
+  background: var(--white);
+
+  &--active {
+    color: var(--white);
+    background: var(--primary);
+    background: -moz-linear-gradient(
+      top,
+      var(--primary) 0%,
+      var(--primary-dark) 100%
+    );
+    background: -webkit-linear-gradient(
+      top,
+      var(--primary) 0%,
+      var(--primary-dark) 100%
+    );
+    background: linear-gradient(
+      to bottom,
+      var(--primary) 0%,
+      var(--primary-dark) 100%
+    );
+  }
+  &--active.tesla-heat {
+    background: var(--heat);
+    background: -moz-linear-gradient(
+      top,
+      var(--heat) 0%,
+      var(--heat-dark) 100%
+    );
+    background: -webkit-linear-gradient(
+      top,
+      var(--heat) 0%,
+      var(--heat-dark) 100%
+    );
+    background: linear-gradient(
+      to bottom,
+      var(--heat) 0%,
+      var(--heat-dark) 100%
+    );
+  }
+
+  &__mode {
+    min-width: 1.375em;
+    min-height: 1.375em;
+    margin: 5px 0px;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-image: url(../public/images/icon-fan-gray.svg);
+  }
+
+  label {
+    margin: 15px 0 0;
+    text-align: center;
+    font-size: 8px;
+    text-transform: uppercase;
+  }
+}
+
+.tesla-heat .tesla-fan__mode {
+  background-image: url(../public/images/icon-wave-gray.svg);
+}
+.tesla-fan--active .tesla-fan__mode {
+  background-image: url(../public/images/icon-fan-white.svg);
+}
+.tesla-fan--active.tesla-heat .tesla-fan__mode {
+  background-image: url(../public/images/icon-wave-white.svg);
+}

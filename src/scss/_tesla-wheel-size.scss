@@ -1,0 +1,48 @@
+input[type="radio"] {
+  -webkit-appearance: none;
+  appearance: none;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  outline: none;
+  margin: 0;
+  cursor: pointer;
+}
+
+input[type="radio"]:checked {
+  border: 1px solid var(--primary);
+}
+
+.tesla-wheel-size--selector {
+  position: relative;
+  border: 1px solid var(--dark-grey);
+  background-color: var(--grey);
+  min-height: 4.5rem;
+}
+
+.tesla-wheel-size {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+
+  & > legend {
+    grid-column: span 2;
+  }
+  &--button {
+    height: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+  }
+  &--img {
+    max-width: 3rem;
+    &__big {
+      max-width: 4rem;
+    }
+  }
+  &--label {
+    font-size: 20px;
+    color: var(--darker-grey);
+    margin: 0;
+  }
+}

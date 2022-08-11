@@ -1,0 +1,27 @@
+.tesla-km-results {
+  display: flex;
+  justify-content: center;
+  gap: 6em;
+  margin: 2em 0;
+
+  &--model {
+    color: var(--primary);
+    font-size: 46px;
+    position: relative;
+  }
+
+  &--number {
+    display: flex;
+    gap: 1px;
+    align-items: start;
+  }
+
+  &--img {
+    max-width: 100%;
+  }
+
+  &--unit {
+    font-size: 20px;
+    text-transform: uppercase;
+  }
+}

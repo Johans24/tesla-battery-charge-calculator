@@ -14,7 +14,7 @@
       <template id="battery-range-calculator">
         <section class="tesla-car">
           <div class="tesla-car--base">
-            <img class="tesla-car--base__img" width="100%" src="./images/car-base.png" alt="Tesla Car">
+            <img class="tesla-car--base__img" src="./images/car-base.png" alt="Tesla Car">
           </div>
           <div class="tesla-car--wheel front">
             <img class="tesla-wheels" src="./images/car-wheel.png" alt="Front wheel">
@@ -72,23 +72,23 @@
           <div class="tesla-wheel-size">
             <legend>Wheels</legend>
     
-            <div>
+            <div class="tesla-wheel-size--selector">
               <input type="radio" id="wheel-19" name="wheelsize" value="19" />
-              <label class="tesla-wheel-size--button" for="wheel-19">
+              <div class="tesla-wheel-size--button" for="wheel-19">
                 <img class="tesla-wheel-size--img" src="./images/icon-wheel.svg" alt="Tesla wheel 21'">
-                <label>
+                <p class="tesla-wheel-size--label">
                   19"
-                </label>
-              </label>
+                </p>
+              </div>
             </div>
     
-            <div>
+            <div class="tesla-wheel-size--selector">
               <input type="radio" id="wheel-21" name="wheelsize" value="21" />
               <div class="tesla-wheel-size--button" for="wheel-21">
                 <img class="tesla-wheel-size--img__big" src="./images/icon-wheel.svg" alt="Tesla wheel 21'">
-                <label>
+                <p class="tesla-wheel-size--label">
                   21"
-                </label>
+                </p>
               </div>
             </div>
         </section>
@@ -99,8 +99,8 @@
       </noscript>
     </div>
   </main>
-
-  <footer class="footer">
+<footer>
+  <div class="footer">
     <div class="footer--item">
       <h6 class="footer--subheader">
         Contact us
@@ -108,7 +108,7 @@
       <ul>
         <li>
           <a href="#">
-            +5491123862348
+            +5491123682368
           </a>
         </li>
         <li>
@@ -201,7 +201,8 @@
         </button>
       </div>
     </div>
-  </footer>
+  </div>
+</footer>
 </body>
 
 </html>

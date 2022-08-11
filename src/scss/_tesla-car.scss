@@ -1,0 +1,51 @@
+.tesla-car {
+  display: grid;
+  justify-content: center;
+  grid-template-columns: 1fr 1fr;
+
+  &--base, &--wheel {
+    grid-row: 1 / 2;
+  }
+
+  &--base {
+    grid-column: 1 / 3;
+
+    img {
+      width: 100%;
+    }
+  }
+
+  &--wheel {
+    display: flex;
+    justify-items: end;
+    align-items: end;
+    margin-bottom: 10%;
+    &.front {
+      grid-column: 1 / -2;
+      margin-left: 50%;
+    }
+
+    &.rear {
+      grid-column: 2 / -1;
+      margin-left: 28%;
+    }
+  }
+
+  &--img {
+    &__19 {
+      height: 38%;
+      -webkit-animation: infinite-spinning 250ms steps(6) infinite;
+      -moz-animation: infinite-spinning 250ms steps(6) infinite;
+      -o-animation: infinite-spinning 250ms steps(6) infinite;
+      animation: infinite-spinning 250ms steps(6) infinite;
+    }
+
+    &__21 {
+      -webkit-animation: infinite-spinning 500ms steps(12) infinite;
+      -moz-animation: infinite-spinning 500ms steps(12) infinite;
+      -o-animation: infinite-spinning 500ms steps(12) infinite;
+      animation: infinite-spinning 500ms steps(12) infinite;
+      height: 40%;
+    }
+  }
+}
