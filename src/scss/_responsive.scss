@@ -8,4 +8,40 @@
   .tesla-fan {
     justify-self: center;
   }
+
+  .tesla-hero {
+    position: relative;
+    &__img {
+      display: block !important;
+      width: 100%;
+    }
+  }
+  
+
+  .nav {
+    position: absolute;
+    top: 0;
+    z-index: 10;
+    width: 100%;
+    color: var(--white);
+    &__toggle {
+      display: none;
+    }
+
+    &__menu {
+      flex-direction: row;
+      justify-content: center;
+      gap: 2rem;
+
+      li {
+        display: block;
+      }
+    }
+
+    a {
+      &.active {
+        border-bottom: 1px solid var(--white) !important;
+      }
+    }
+  }
 }

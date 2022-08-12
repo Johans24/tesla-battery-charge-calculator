@@ -12,6 +12,26 @@
   <div class="topbar">
     <img src="./images/logo.png" alt="Tesla Logo">
   </div>
+  <div class="tesla-hero">
+    <img class="tesla-hero__img" src="./images/hero-image.png" alt="Tesla Hero" srcset="./images/hero-image.png,./images/hero-image@2x.png 2x">
+    <nav class="nav">
+      <div class="nav__container">
+        <input type="checkbox" id="nav__checkbox" class="nav__checkbox">
+        <label for="nav__checkbox" class="nav__toggle">
+          <img class="menu" src="./images/bars.png" alt="Open Nav">
+          <img class="close" src="./images/times.png" alt="Close Nav">
+        </label>
+        <ul class="nav__menu">
+          <li><a class="active" href="#">Model S</a></li>
+          <li><a href="#">Model X</a></li>
+          <li><a href="#">Model 3</a></li>
+          <li><a href="#">Roadster</a></li>
+          <li><a href="#">Energy</a></li>
+        </ul>
+      </div>
+    </nav>
+  </div>
+
   <main class="container">
     <section class="tesla-description">
       <div class="tesla-description__container">
@@ -30,7 +50,7 @@
       Whoops! you need to enable Javascript to see the Battery Range Calculator
     </noscript>
     <div id="js-container">
-      <template id="battery-range-calculator">
+      <template style="display:none" id="battery-range-calculator">
         <section class="tesla-car">
           <div class="tesla-car__base">
             <img class="tesla-car__base__img" src="./images/car-base.png" srcset="./images/car-base@2x.png 2x"

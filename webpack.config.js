@@ -14,7 +14,7 @@ module.exports = {
   devServer: {
     port: 3030,
     static: {
-      directory: path.join(__dirname, 'public'),
+      directory: path.join(__dirname, "public"),
     },
   },
   module: {
@@ -24,12 +24,15 @@ module.exports = {
         exclude: /node_modules/,
         use: {
           loader: "babel-loader",
+          options: {
+            presets: ["@babel/preset-env"],
+          },
         },
       },
       {
         test: /\.(sa|sc|c)ss$/,
         use: ["style-loader", "css-loader", "sass-loader"],
-      }
+      },
     ],
   },
 };

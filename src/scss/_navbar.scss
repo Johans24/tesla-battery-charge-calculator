@@ -1,0 +1,99 @@
+.tesla-hero {
+  position: relative;
+  &__img {
+    display: none;
+  }
+}
+
+.nav {
+  font-weight: bolder;
+  padding: 2em 0;
+
+  &__container {
+    display: flex;
+    justify-content: center;
+  }
+
+  &__toggle {
+    position: absolute;
+    cursor: pointer;
+    margin: 0rem 1rem;
+    right: 0;
+
+    img {
+      &.menu {
+        width: 2.5rem;
+      }
+
+      &.close {
+        width: 1rem;
+      }
+    }
+
+    .close {
+      display: none;
+    }
+
+    .menu {
+      margin-top: 0.2rem;
+    }
+  }
+
+  &__checkbox {
+    display: none;
+  }
+
+  &__menu {
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+    align-items: center;
+    margin: 1rem;
+
+    li {
+      list-style: none;
+      display: none;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+      font-size: 14px;
+      text-transform: uppercase;
+      padding: 0.5em;
+      &.active {
+        border-bottom: 1px solid black;
+      }
+    }
+  }
+}
+
+#nav__checkbox:checked ~ ul.nav__menu li {
+  display: block;
+}
+
+#nav__checkbox:checked ~ label.nav__toggle .close {
+  display: block;
+}
+
+#nav__checkbox:checked ~ label.nav__toggle .menu {
+  display: none;
+}
+
+// Desktop view
+@media only screen and (min-width: 560px) {
+  .nav {
+    &__toggle {
+      display: none;
+    }
+
+    &__menu {
+      flex-direction: row;
+      justify-content: center;
+
+      li {
+        display: block;
+      }
+    }
+  }
+}

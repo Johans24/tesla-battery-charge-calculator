@@ -1,3 +1,4 @@
+import "core-js/stable";
 import metrics100D from "./data/metric-100D.json";
 import metricsP100D from "./data/metric-P100D.json";
 import { normalizeTeslaModelData, calculateKm } from "./js/utils";

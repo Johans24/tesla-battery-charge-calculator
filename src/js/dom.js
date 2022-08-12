@@ -1,7 +1,7 @@
+
 export const loadBatteryRangeCalculator = () => {
-  const temp = document.getElementById("battery-range-calculator");
-  const clone = temp.content.cloneNode(true);
-  document.getElementById("js-container").appendChild(clone);
+  const batteryRangeCalc = document.getElementById("battery-range-calculator");
+  document.getElementById("js-container").innerHTML = batteryRangeCalc.innerHTML;
 
   [...document.querySelectorAll(".arrow-controls")].forEach((elem) => {
     elem.addEventListener("click", ({ target: arrow }) => {
