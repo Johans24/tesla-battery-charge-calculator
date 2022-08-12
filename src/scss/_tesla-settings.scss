@@ -68,11 +68,11 @@ input[type="number"] {
       background-color: transparent;
 
       &:first-child {
-        background-image: url(../public/images/icon-thin-chevron-up.svg);
+        background-image: url(./assets/images/icon-thin-chevron-up.svg);
       }
       &:last-child {
         border-top: 1px solid var(--dark-grey);
-        background-image: url(../public/images/icon-thin-chevron-down.svg);
+        background-image: url(./assets/images/icon-thin-chevron-down.svg);
       }
     }
   }

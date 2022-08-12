@@ -10,7 +10,7 @@
 
 @font-face {
   font-family: MontserratRegular;
-  src: url(../public/fonts/Montserrat-Regular.ttf);
+  src: url(./assets/fonts/Montserrat-Regular.ttf);
 }
 
 :root {
@@ -103,7 +103,7 @@ body {
     margin: 0;
   }
   .go-to-range-per-change {
-    background: var(--white) url(../public/images/icon-chevron-down.svg)
+    background: var(--white) url(./assets/images/icon-chevron-down.svg)
       no-repeat center center;
     border-radius: 50%;
     min-width: 4.5em;

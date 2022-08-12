@@ -4,6 +4,7 @@ import metricsP100D from "./data/metric-P100D.json";
 import { normalizeTeslaModelData, calculateKm } from "./js/utils";
 import { initReactivity, watchReactive } from "./js/reactivity";
 
+import "./index.html";
 import "./index.scss";
 import { loadBatteryRangeCalculator } from "./js/dom";
 

@@ -66,7 +66,7 @@ input[type="checkbox"] {
     background-size: 100%;
     background-repeat: no-repeat;
     background-position: center;
-    background-image: url(../public/images/icon-fan-gray.svg);
+    background-image: url(./assets/images/icon-fan-gray.svg);
   }
 
   label {
@@ -78,11 +78,11 @@ input[type="checkbox"] {
 }
 
 .tesla-heat .tesla-fan__mode {
-  background-image: url(../public/images/icon-wave-gray.svg);
+  background-image: url(./assets/images/icon-wave-gray.svg);
 }
 .tesla-fan--active .tesla-fan__mode {
-  background-image: url(../public/images/icon-fan-white.svg);
+  background-image: url(./assets/images/icon-fan-white.svg);
 }
 .tesla-fan--active.tesla-heat .tesla-fan__mode {
-  background-image: url(../public/images/icon-wave-white.svg);
+  background-image: url(./assets/images/icon-wave-white.svg);
 }
