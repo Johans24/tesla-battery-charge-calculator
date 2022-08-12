@@ -97,8 +97,11 @@
         <section class="calculator-container" id="battery-range-calculator-inputs">
           <div class="tesla-settings">
             <label class="calculator-input-label" for="kmh">Speed</label>
-            <div class="tesla-settings__container kmh">
-              <input type="number" step="10" min="70" max="140" name="kmh" id="kmh" tabindex="-1" readonly />
+            <div class="tesla-settings__container">
+              <div class="tesla-settings__input">
+                <input type="number" step="10" min="70" max="140" name="kmh" id="kmh" tabindex="-1" readonly />
+                <span class="tesla-settings__unit kmh">KMH</span>
+              </div>
               <div class="arrow-controls tesla-settings__arrows">
                 <button name="kmh" control="up" class="tesla-arrows" title="+" />
                 <button name="kmh" control="down" class="tesla-arrows" title="-" />
@@ -108,8 +111,11 @@
           <div class="separator"></div>
           <div class="tesla-settings">
             <label class="calculator-input-label" for="temp">Outside Temperature</label>
-            <div class="tesla-settings__container degrees">
-              <input type="number" step="10" min="-10" max="40" name="temp" id="temp" tabindex="-1" readonly />
+            <div class="tesla-settings__container">
+              <div class="tesla-settings__input">
+                <input type="number" step="10" min="-10" max="40" name="temp" id="temp" tabindex="-1" readonly />
+                <span class="tesla-settings__unit temp">°</span>
+              </div>
               <div class="arrow-controls tesla-settings__arrows">
                 <button name="temp" control="up" class="tesla-arrows" title="+" />
                 <button name="temp" control="down" class="tesla-arrows" title="-" />

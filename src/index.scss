@@ -26,10 +26,11 @@
   --white: #fff;
 }
 
-*:focus:not(input[type="radio"]) {
-  border: 3px solid var(--primary) !important;
+*:focus-visible {
+  box-shadow: 0px 1px 20px -3px var(--primary-clear);
+  -webkit-box-shadow: 0px 1px 20px -3px var(--primary-clear);
+  -moz-box-shadow: 0px 1px 20px -3px var(--primary-clear);
 }
-
 
 html,
 body {

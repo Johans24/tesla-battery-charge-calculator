@@ -22,6 +22,34 @@ input[type="number"] {
   & > label {
     grid-column: span 2;
   }
+
+  &__unit {
+    font-size: 20px; 
+
+    &.kmh {
+      margin-left: 5px;
+      align-self: center;
+    }
+
+    &.temp {
+      margin-left: 1px;
+      align-self: start;
+    }
+  }
+
+
+  &__input {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 0.1em;
+
+    input {
+      text-align: right;
+      max-width: 25%;
+    }
+  }
+
   &__container {
     grid-column: span 2;
     position: relative;
@@ -34,18 +62,6 @@ input[type="number"] {
       margin: auto 0;
       font-weight: bold;
       font-size: 20px;
-    }
-
-    &.kmh::after {
-      content: "KMH";
-      left: 4em;
-      bottom: 1em;
-    }
-
-    &.degrees::after {
-      content: "°";
-      left: 3.2em;
-      bottom: 1.5em;
     }
   }
 
