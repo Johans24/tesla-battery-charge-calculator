@@ -78,6 +78,11 @@ body {
   max-height: 3em;
 }
 
+.range-per-charge {
+  text-align: center;
+  font-size: 38px;
+}
+
 .tesla-description {
   display: flex;
   justify-content: center;
@@ -103,8 +108,7 @@ body {
     margin: 0;
   }
   .go-to-range-per-change {
-    background: var(--white) url(./assets/images/icon-chevron-down.svg)
-      no-repeat center center;
+    background: var(--white) url(./assets/images/icon-chevron-down.svg) no-repeat center center;
     border-radius: 50%;
     min-width: 4.5em;
     min-height: 4.5em;
