@@ -26,6 +26,11 @@
   --white: #fff;
 }
 
+*:focus:not(input[type="radio"]) {
+  border: 3px solid var(--primary) !important;
+}
+
+
 html,
 body {
   font-family: MontserratRegular;

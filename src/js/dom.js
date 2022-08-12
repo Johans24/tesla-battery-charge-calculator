@@ -1,4 +1,11 @@
 
+const handleChangeFan = () => {
+  const checkbox = document.getElementById("ac");
+  checkbox.checked = !checkbox.checked;
+  const change = new Event("change", { bubbles: true });
+  checkbox.dispatchEvent(change);
+}
+
 export const loadBatteryRangeCalculator = () => {
   const batteryRangeCalc = document.getElementById("battery-range-calculator");
   document.getElementById("js-container").innerHTML = batteryRangeCalc.innerHTML;
@@ -18,10 +25,8 @@ export const loadBatteryRangeCalculator = () => {
     });
   });
 
-  document.getElementById("tesla-fan").addEventListener("click", () => {
-    const checkbox = document.getElementById("ac");
-    checkbox.checked = !checkbox.checked;
-    const change = new Event("change", { bubbles: true });
-    checkbox.dispatchEvent(change);
+  document.getElementById("tesla-fan").addEventListener("click", handleChangeFan);
+  document.getElementById("tesla-fan").addEventListener("keyup", ({ key }) => {
+    if (key === "Enter") handleChangeFan();
   });
 };

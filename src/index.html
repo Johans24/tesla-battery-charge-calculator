@@ -5,6 +5,8 @@
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="./index.scss" />
+  <script type="module" defer src="./index.js"></script>
   <title>Tesla</title>
 </head>
 
@@ -13,7 +15,7 @@
     <img src="./assets/images/logo.png" alt="Tesla Logo">
   </div>
   <div class="tesla-hero">
-    <img class="tesla-hero__img" src="./assets/images/hero-image.png" alt="Tesla Hero" srcset="./assets/images/hero-image@2x.png 2x">
+    <img class="tesla-hero__img" src="./assets/images/hero-image.png" alt="Tesla Hero" srcset="./assets/images/hero-image@2x.png">
     <nav class="nav">
       <div class="nav__container">
         <input type="checkbox" id="nav__checkbox" class="nav__checkbox">
@@ -42,12 +44,18 @@
           A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a
           paradisematic country, in which roasted parts of sentences fly into your mouth.
         </p>
-        <a class="go-to-range-per-change" href="#battery-range-calculator"></a>
+        <a class="go-to-range-per-change" href="#battery-range-calculator-inputs" title="&#x25BC;"></a>
       </div>
     </section>
     <!-- SSR? Display data manually? -->
     <noscript>
-      Whoops! you need to enable Javascript to see the Battery Range Calculator
+      <p style="text-align: center; font-weight: bold;">
+        Whoops! you need to enable Javascript to see the Battery Range Calculator. Check this demo out
+      </p>
+
+      <div id="battery-range-calculator-inputs">
+        <img src="./assets/images/reactivity-example.gif" alt="Tesla Battery Range Calculator Example">
+      </div>
     </noscript>
     <div id="js-container">
       <template style="display:none" id="battery-range-calculator">
@@ -56,22 +64,20 @@
         </h2>
         <section class="tesla-car">
           <div class="tesla-car__base">
-            <img class="tesla-car__base__img" src="./assets/images/car-base.png" srcset="./assets/images/car-base@2x.png 2x"
+            <img class="tesla-car__base__img" src="./assets/images/car-base.png" srcset="./assets/images/car-base@2x.png"
               alt="Tesla Car">
           </div>
           <div class="tesla-car__wheel front">
-            <img class="tesla-wheels" src="./assets/images/car-wheel.png"
-              srcset="./assets/images/car-wheel@2x.png 2x" alt="Front wheel">
+            <img class="tesla-wheels" src="./assets/images/car-wheel.png" srcset="./assets/images/car-wheel@2x.png?width=100" alt="Front wheel">
           </div>
           <div class="tesla-car__wheel rear">
-            <img class="tesla-wheels" src="./assets/images/car-wheel.png"
-              srcset="./assets/images/car-wheel@2x.png 2x" alt="Rear wheel">
+            <img class="tesla-wheels" src="./assets/images/car-wheel.png" srcset="./assets/images/car-wheel@2x.png?width=100" alt="Rear wheel">
           </div>
         </section>
 
         <section class="tesla-km-results">
           <div class="tesla-km-results__model">
-            <img class="tesla-km-resuls__img" src="./assets/images/100d.png" srcset="./assets/images/100d@2x.png 2x"
+            <img class="tesla-km-resuls__img" src="./assets/images/100d.png" srcset="./assets/images/100d@2x.png?width=100"
               alt="Tesla 100d Model">
             <div class="tesla-km-results__number">
               <span id="100D-km"></span>
@@ -80,7 +86,7 @@
           </div>
           <div class="tesla-km-results__model">
             <img class="tesla-km-resuls__img" src="./assets/images/p100d.png"
-              srcset="./assets/images/p100d@2x.png 2x" alt="Tesla p100d Model">
+              srcset="./assets/images/p100d@2x.png?width=100" alt="Tesla p100d Model">
             <div class="tesla-km-results__number">
               <span id="P100D-km"></span>
               <span class="tesla-km-results__unit">km</span>
@@ -92,10 +98,10 @@
           <div class="tesla-settings">
             <label class="calculator-input-label" for="kmh">Speed</label>
             <div class="tesla-settings__container kmh">
-              <input type="number" step="10" min="70" max="140" name="kmh" id="kmh" readonly />
+              <input type="number" step="10" min="70" max="140" name="kmh" id="kmh" tabindex="-1" readonly />
               <div class="arrow-controls tesla-settings__arrows">
-                <button name="kmh" control="up" class="tesla-arrows" />
-                <button name="kmh" control="down" class="tesla-arrows" />
+                <button name="kmh" control="up" class="tesla-arrows" title="+" />
+                <button name="kmh" control="down" class="tesla-arrows" title="-" />
               </div>
             </div>
           </div>
@@ -103,24 +109,24 @@
           <div class="tesla-settings">
             <label class="calculator-input-label" for="temp">Outside Temperature</label>
             <div class="tesla-settings__container degrees">
-              <input type="number" step="10" min="-10" max="40" name="temp" id="temp" readonly />
+              <input type="number" step="10" min="-10" max="40" name="temp" id="temp" tabindex="-1" readonly />
               <div class="arrow-controls tesla-settings__arrows">
-                <button name="temp" control="up" class="tesla-arrows" />
-                <button name="temp" control="down" class="tesla-arrows" />
+                <button name="temp" control="up" class="tesla-arrows" title="+" />
+                <button name="temp" control="down" class="tesla-arrows" title="-" />
               </div>
             </div>
           </div>
-          <div id="tesla-fan" class="tesla-fan">
+          <div id="tesla-fan" class="tesla-fan" tabindex="0">
             <label id="ac-label" for="ac"></label>
             <i class="tesla-fan__mode"></i>
-            <input type="checkbox" name="ac" id="ac" />
+            <input type="checkbox" tabindex="-1" name="ac" id="ac" />
           </div>
           <div class="separator"></div>
           <div class="tesla-wheel-size">
             <legend class="calculator-input-label">Wheels</legend>
 
             <div class="tesla-wheel-size__selector">
-              <input type="radio" id="wheel-19" name="wheelsize" value="19" />
+              <input type="radio" id="wheel-19" name="wheelsize" value="19"  />
               <div class="tesla-wheel-size__button" for="wheel-19">
                 <img class="tesla-wheel-size__img" src="./assets/images/icon-wheel.svg" alt="Tesla wheel 21'">
                 <p class="tesla-wheel-size__label">
@@ -130,7 +136,7 @@
             </div>
 
             <div class="tesla-wheel-size__selector">
-              <input type="radio" id="wheel-21" name="wheelsize" value="21" />
+              <input type="radio" id="wheel-21" name="wheelsize" value="21"  />
               <div class="tesla-wheel-size__button" for="wheel-21">
                 <img class="tesla-wheel-size__img--big" src="./assets/images/icon-wheel.svg" alt="Tesla wheel 21'">
                 <p class="tesla-wheel-size__label">
@@ -139,14 +145,14 @@
               </div>
             </div>
         </section>
+        <p class="battery-range-calculator-disclaimer">
+          The actual amount of range that you experience will vary based on your particular use conditions. Your vehicle
+          range is also dependent on other conditions, such as vehicle configuration, battery age and condition, driving
+          style and operating, environmental and climate conditions. See how some of these particular use conditions may
+          affect your range in our simulation model.
+        </p>
       </template>
     </div>
-    <p class="battery-range-calculator-disclaimer">
-      The actual amount of range that you experience will vary based on your particular use conditions. Your vehicle
-      range is also dependent on other conditions, such as vehicle configuration, battery age and condition, driving
-      style and operating, environmental and climate conditions. See how some of these particular use conditions may
-      affect your range in our simulation model.
-    </p>
   </main>
   <footer class="footer">
     <div class="footer__item">
