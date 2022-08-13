@@ -16,9 +16,13 @@ Runs Jest tests
 
 Runs cypress e2e testing. Must run after the server is running on localhost:1234
 
+## Static Website
+
+[https://johans-tesla-test.netlify.app/](https://johans-tesla-test.netlify.app/)
+
 ## Considerations
 
-Regarding the wheel size functionality, what i implemented was an increase of size of the current wheel asset, however, i think
+Regarding the wheel size functionality, what I implemented was an increase of size of the current wheel asset, however, i think
 this would look much better with a different wheel asset. I also included an increase of the animation time, since that's kinda how
 it looks in the reactivity example gif.
 
