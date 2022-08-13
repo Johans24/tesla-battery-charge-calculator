@@ -18,6 +18,8 @@ const initialState = {
   pD100Km: 0,
 };
 
+cssVars();
+
 const model = initReactivity(initialState);
 loadBatteryRangeCalculator();
 

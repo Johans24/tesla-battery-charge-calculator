@@ -121,3 +121,15 @@ body {
     border: 2px solid black;
   }
 }
+
+
+@media all and (-ms-high-contrast:none) {
+  .container {
+    max-width: 100%;
+  }
+  
+  .tesla-car {
+    display: -ms-grid;
+    -ms-grid-columns: 1fr;
+  }
+}
