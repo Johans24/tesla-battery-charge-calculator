@@ -4,7 +4,7 @@
   "description": "This is a technical challenge to test Front-end development-related skills. By building a working example we can better understand your way of working, how you structure your code, thoughts, and take some design decisions along the way. What we ultimately want to see is how far you can go, given the requirements described here",
   "source": "src/index.html",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "jest",
     "start": "parcel",
     "build": "parcel build"
   },
@@ -12,6 +12,14 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
+  "babel": {
+    "presets": ["@babel/preset-env"]
+  },
+  "jest": {
+    "transform": {
+      "^.+\\.js$": "babel-jest"
+    }
+  },
   "devDependencies": {
     "@babel/core": "^7.18.10",
     "@babel/plugin-proposal-nullish-coalescing-operator": "^7.18.6",
@@ -20,11 +28,13 @@
     "@babel/preset-env": "^7.18.10",
     "@parcel/transformer-sass": "^2.7.0",
     "autoprefixer": "^10.4.8",
+    "babel-jest": "^28.1.3",
     "babel-loader": "^8.2.5",
     "css-loader": "^6.7.1",
     "cypress": "^10.4.0",
     "file-loader": "^6.2.0",
     "html-loader": "^4.1.0",
+    "jest": "^28.1.3",
     "parcel": "^2.7.0",
     "postcss": "^8.4.14",
     "postcss-loader": "^7.0.1",
